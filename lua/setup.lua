@@ -39,6 +39,8 @@ require('packer').startup(function(use)
 
 	if install_plugins then
 		require('packer').sync()
+		require('configs')
+	else
+		require('configs')
 	end
-	require('configs')
 end)

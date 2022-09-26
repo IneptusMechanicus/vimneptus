@@ -24,19 +24,21 @@ end
 require('packer').startup(function(use)
 	use {'wbthomason/packer.nvim'}
 	use {'nvim-lualine/lualine.nvim'}
-	use {"famiu/bufdelete.nvim"}
+	use {'famiu/bufdelete.nvim'}
+	use {'nvim-lua/popup.nvim'}
 	use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
-	use {"nvim-neo-tree/neo-tree.nvim",
+	use {'nvim-neo-tree/neo-tree.nvim',
 		requires = { 
-			"nvim-lua/plenary.nvim",
-			"MunifTanjim/nui.nvim",
+			'nvim-lua/plenary.nvim',
+			'MunifTanjim/nui.nvim',
 		}
 	}
-	use {
-		'goolord/alpha-nvim',
+	use {'goolord/alpha-nvim',
 		requires = { 'kyazdani42/nvim-web-devicons' }
 	}
-
+	use {'nvim-treesitter/nvim-treesitter',
+		run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+	}
 	if install_plugins then
 		require('packer').sync()
 	end

@@ -19,3 +19,4 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = false
 
 vim.opt.fillchars='eob: '
+vim.opt.listchars='tab:| ,trail:*,eol:¬'

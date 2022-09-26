@@ -2,7 +2,7 @@
 -- Plugin Configuration --
 --------------------------
 
- 
+
 --      .1 Lualine      --
 
 require('lualine').setup({
@@ -10,7 +10,8 @@ require('lualine').setup({
 		icons_enabled = true,
 		theme = 'auto',
 		component_separators = '|',
-    	section_separators = '',
+		section_separators = '',
+		disabled_filetypes = { 'packer', 'neo-tree' }
 	}
 })
 
@@ -19,7 +20,7 @@ require('lualine').setup({
 
 require("neo-tree").setup({
 	default_component_configs = {
-    	indent = {
+		indent = {
 			with_markers = true,
 			indent_marker = "│",
 			last_indent_marker = "└",
@@ -40,7 +41,7 @@ require('bufferline').setup({
 		hover = {
 			enabled = true,
 			delay = 200
-        },
+		},
 		offsets = {
 			{
 				filetype = "neo-tree",
@@ -51,7 +52,7 @@ require('bufferline').setup({
 		},
 		separator_style = "slant",
 		close_command = "Bdelete! %d"
-    }
+	}
 })
 
 -- Start Screen --

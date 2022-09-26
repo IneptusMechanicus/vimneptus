@@ -40,4 +40,5 @@ require('packer').startup(function(use)
 	if install_plugins then
 		require('packer').sync()
 	end
+	require('configs')
 end)

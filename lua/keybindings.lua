@@ -3,14 +3,14 @@
 --------------------------
 vim.g.mapleader = ' '
 
-
 -- Main
 vim.keymap.set('n', '<leader>w', '<cmd>write<cr>')
 vim.keymap.set('n', '<leader>q','<cmd>Bdelete<cr>')
 vim.keymap.set('n', '<C-q>', '<cmd>qa<cr>')
 
 -- Clipboard hotkeys
-vim.keymap.set({'n', 'v'}, '<leader>c', '<cmd>OSCYank<cr>')
+vim.keymap.set({'n', 'v'}, '<leader>c', '"+y')
+vim.keymap.set({'n', 'v'}, '<C-c>', '<cmd>OSCYank<cr>')
 vim.keymap.set({'n', 'x'}, '<leader>v', '"+p')
 
 -- File explorer

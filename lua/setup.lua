@@ -44,6 +44,7 @@ require('packer').startup(function(use)
 	use {'famiu/bufdelete.nvim'}
 	use {'nvim-lua/popup.nvim'}
 	use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+	use {'ojroques/vim-oscyank'}
 	use {'nvim-neo-tree/neo-tree.nvim',
 		requires = { 
 			'nvim-lua/plenary.nvim',

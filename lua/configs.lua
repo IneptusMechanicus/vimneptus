@@ -15,7 +15,6 @@ require('lualine').setup({
 	}
 })
 
-
 --     .2 NeoTree       --
 
 require("neo-tree").setup({
@@ -58,6 +57,3 @@ require('bufferline').setup({
 -- Start Screen --
 
 require'alpha'.setup(require('startscreen').config)
-
-
--- Initialization commands --

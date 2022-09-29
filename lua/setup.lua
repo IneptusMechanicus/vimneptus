@@ -1,10 +1,9 @@
-
 --------------------------
 --    Packer Setup      --
 --------------------------
 
 local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-local install_plugins = true
+local install_plugins = false
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	print('Installing packer...')
@@ -16,12 +15,13 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	install_plugins = true
 end
 
-
 --------------------------
 -- Plugin Installation  --
 --------------------------
 
 require('packer').startup(function(use)
+
+	-- Packer --
 	use {'wbthomason/packer.nvim',
 		git = {
 			cmd = 'git',
@@ -31,68 +31,54 @@ require('packer').startup(function(use)
 			},
 		},
 	}
-	use {'nvim-lualine/lualine.nvim'}
-	use {'famiu/bufdelete.nvim'}
+
+	-- Start Screen --
+	use {'goolord/alpha-nvim',
+		requires = { 'kyazdani42/nvim-web-devicons' },
+		config = function() require('alpha').setup(require('plugins.alpha').config) end,
+	}
+
+	-- Status Line --
+	use {'nvim-lualine/lualine.nvim',
+		config = function() require('plugins.lualine') end
+	}
+
+	-- Clipboard and popups utils --
 	use {'nvim-lua/popup.nvim'}
-	use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 	use {'ojroques/vim-oscyank'}
+
+	-- Open File Tabs --
+	use {'famiu/bufdelete.nvim'}
+	use {'akinsho/bufferline.nvim',
+		requires = 'kyazdani42/nvim-web-devicons',
+		config = function() require('plugins.bufferline') end
+	}
+
+	-- File Explorer --
 	use {'nvim-neo-tree/neo-tree.nvim',
 		requires = { 
 			'nvim-lua/plenary.nvim',
 			'MunifTanjim/nui.nvim',
-		}
+		},
+		config = function() require('plugins.neotree') end
 	}
-	use {'goolord/alpha-nvim',
-		requires = { 'kyazdani42/nvim-web-devicons' },
-		config = function() require('plugins.alpha') end,
-	}
+
+
+	-- Code highlighting --
 	use {'nvim-treesitter/nvim-treesitter',
 		run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+		congig = function() require('plugins.treesitter') end
 	}
 
-	use {'L3MON4D3/LuaSnip'}
-
-	use {'hrsh7th/nvim-cmp',
-		event = 'InsertEnter',
-		config = function() require('plugins.cmp') end,
-	}
-
-	use {'saadparwaiz1/cmp_luasnip',
-		requires = 'nvim-cmp'
-	}
-
-	use {'hrsh7th/cmp-buffer',
-		requires = 'nvim-cmp'
-	}
-
-	use {'hrsh7th/cmp-path',
-		requires = 'nvim-cmp'
-	}
-
-	use {'hrsh7th/cmp-nvim-lsp',
-		requires = 'nvim-cmp'
-	}
-
-	use {'williamboman/mason.nvim'}
-
-	use {'WhoIsSethDaniel/mason-tool-installer.nvim',
-    	requires = "mason.nvim",
-	}
-
+	-- Autocomplete plugins --
 	use {'neovim/nvim-lspconfig'}
-
-	use {'jayp0521/mason-null-ls.nvim',
-		requires = { "mason.nvim", "null-ls.nvim" }
-	}
-
-	use {'williamboman/mason-lspconfig.nvim',
-		requires = { "mason.nvim", "nvim-lspconfig" },
-	}
-
-	use {'jose-elias-alvarez/null-ls.nvim',
-		requires = {'nvim-lua/plenary.nvim'},
-    	event = { "BufRead", "BufNewFile" }
-	}
+	use {'hrsh7th/nvim-cmp'}
+	use {'hrsh7th/cmp-buffer'}
+	use {'hrsh7th/cmp-path'}
+	use {'saadparwaiz1/cmp_luasnip'}
+	use {'hrsh7th/cmp-nvim-lsp'}
+	use {'hrsh7th/cmp-nvim-lua'}
+	use {'L3MON4D3/LuaSnip'}
 
 	if install_plugins then
 		require('packer').sync()

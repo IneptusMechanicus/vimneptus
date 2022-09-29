@@ -63,7 +63,6 @@ require('packer').startup(function(use)
 		config = function() require('plugins.neotree') end
 	}
 
-
 	-- Code highlighting --
 	use {'nvim-treesitter/nvim-treesitter',
 		run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
@@ -80,6 +79,9 @@ require('packer').startup(function(use)
 	use {'hrsh7th/cmp-nvim-lua'}
 	use {'L3MON4D3/LuaSnip'}
 
+	use {"williamboman/nvim-lsp-installer",
+    	requires = "neovim/nvim-lspconfig"
+	}
 	if install_plugins then
 		require('packer').sync()
 	end

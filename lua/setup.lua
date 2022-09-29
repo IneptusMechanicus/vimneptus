@@ -24,19 +24,10 @@ end
 require('packer').startup(function(use)
 	use {'wbthomason/packer.nvim',
 		git = {
-			cmd = 'git', -- The base command for git operations
-			subcommands = { -- Format strings for git subcommands
+			cmd = 'git',
+			subcommands = {
 				update = 'pull --ff-only --progress',
 				install = 'clone --depth %i --no-single-branch --progress',
-				fetch = 'fetch --depth 999999 --progress',
-				checkout = 'checkout %s --',
-				update_branch = 'merge --ff-only @{u}',
-				current_branch = 'branch --show-current',
-				diff = 'log --color=never --pretty=format:FMT --no-show-signature HEAD@{1}...HEAD',
-				diff_fmt = '%%h %%s (%%cr)',
-				get_rev = 'rev-parse --short HEAD',
-				get_msg = 'log --color=never --pretty=format:FMT --no-show-signature HEAD -n 1',
-				submodules = 'submodule update --init --recursive --progress'
 			},
 		},
 	}
@@ -52,11 +43,57 @@ require('packer').startup(function(use)
 		}
 	}
 	use {'goolord/alpha-nvim',
-		requires = { 'kyazdani42/nvim-web-devicons' }
+		requires = { 'kyazdani42/nvim-web-devicons' },
+		config = function() require('plugins.alpha') end,
 	}
 	use {'nvim-treesitter/nvim-treesitter',
 		run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
 	}
+
+	use {'L3MON4D3/LuaSnip'}
+
+	use {'hrsh7th/nvim-cmp',
+		event = 'InsertEnter',
+		config = function() require('plugins.cmp') end,
+	}
+
+	use {'saadparwaiz1/cmp_luasnip',
+		requires = 'nvim-cmp'
+	}
+
+	use {'hrsh7th/cmp-buffer',
+		requires = 'nvim-cmp'
+	}
+
+	use {'hrsh7th/cmp-path',
+		requires = 'nvim-cmp'
+	}
+
+	use {'hrsh7th/cmp-nvim-lsp',
+		requires = 'nvim-cmp'
+	}
+
+	use {'williamboman/mason.nvim'}
+
+	use {'WhoIsSethDaniel/mason-tool-installer.nvim',
+    	requires = "mason.nvim",
+	}
+
+	use {'neovim/nvim-lspconfig'}
+
+	use {'jayp0521/mason-null-ls.nvim',
+		requires = { "mason.nvim", "null-ls.nvim" }
+	}
+
+	use {'williamboman/mason-lspconfig.nvim',
+		requires = { "mason.nvim", "nvim-lspconfig" },
+	}
+
+	use {'jose-elias-alvarez/null-ls.nvim',
+		requires = {'nvim-lua/plenary.nvim'},
+    	event = { "BufRead", "BufNewFile" }
+	}
+
 	if install_plugins then
 		require('packer').sync()
 	end

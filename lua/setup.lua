@@ -82,6 +82,12 @@ require('packer').startup(function(use)
 	use {"williamboman/nvim-lsp-installer",
     	requires = "neovim/nvim-lspconfig"
 	}
+
+	-- Comment plugin --
+	use {'terrortylor/nvim-comment',
+		config = function() require('nvim_comment').setup() end
+	}
+
 	if install_plugins then
 		require('packer').sync()
 	end

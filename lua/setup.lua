@@ -56,7 +56,8 @@ require('packer').startup(function(use)
 
 	-- File Explorer --
 	use {'nvim-neo-tree/neo-tree.nvim',
-		requires = { 
+		branch = "v2.x",
+		requires = {
 			'nvim-lua/plenary.nvim',
 			'MunifTanjim/nui.nvim',
 		},
@@ -66,7 +67,10 @@ require('packer').startup(function(use)
 	-- Code highlighting --
 	use {'nvim-treesitter/nvim-treesitter',
 		run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-		congig = function() require('plugins.treesitter') end
+		config = function()
+			require('plugins.treesitter')
+			vim.cmd('TSEnable highlight')
+		end
 	}
 
 	-- Autocomplete plugins --
@@ -86,6 +90,12 @@ require('packer').startup(function(use)
 	-- Comment plugin --
 	use {'terrortylor/nvim-comment',
 		config = function() require('nvim_comment').setup() end
+	}
+	
+
+	use {"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+		config = function() require("trouble").setup({}) end
 	}
 
 	if install_plugins then

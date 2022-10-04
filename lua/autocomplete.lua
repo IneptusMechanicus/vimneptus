@@ -7,7 +7,6 @@ vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 local select_opts = {behavior = cmp.SelectBehavior.Select}
-
 -- See :help cmp-config
 cmp.setup({
 	snippet = {
@@ -174,29 +173,3 @@ vim.api.nvim_create_autocmd('User', {
 		bufmap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
 	end
 })
-
-
------------------
--- LSP servers --
------------------
-
--- Prevent multiple instance of lsp servers
--- if file is sourced again
-if vim.g.lsp_setup_ready == nil then
-	vim.g.lsp_setup_ready = true
-
-	-- See : help lspconfig-setup
-	lspconfig.html.setup({})
-	lspconfig.cssls.setup({})
-	lspconfig.eslint.setup({})
-	lspconfig.tsserver.setup({
-		flags = {
-			debounce_text_changes = 150,
-		},
-		settings = {
-			completions = {
-				completeFunctionCalls = true
-			}
-		},
-	})
-end

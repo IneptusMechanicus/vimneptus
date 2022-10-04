@@ -67,10 +67,7 @@ require('packer').startup(function(use)
 	-- Code highlighting --
 	use {'nvim-treesitter/nvim-treesitter',
 		run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-		config = function()
-			require('plugins.treesitter')
-			vim.cmd('TSEnable highlight')
-		end
+		config = function() require('plugins.treesitter') end
 	}
 
 	-- Autocomplete plugins --
@@ -83,19 +80,41 @@ require('packer').startup(function(use)
 	use {'hrsh7th/cmp-nvim-lua'}
 	use {'L3MON4D3/LuaSnip'}
 
-	use {"williamboman/nvim-lsp-installer",
-    	requires = "neovim/nvim-lspconfig"
+	use {'windwp/nvim-autopairs',
+    	config = function() require("nvim-autopairs").setup {} end
+	}
+
+	-- Diagnostics (Linting) --
+	use {'jose-elias-alvarez/null-ls.nvim',
+		event = { 'BufRead', 'BufNewFile' },
+		config = function() require('null-ls').setup() end
 	}
 
 	-- Comment plugin --
 	use {'terrortylor/nvim-comment',
 		config = function() require('nvim_comment').setup() end
 	}
-	
 
-	use {"folke/trouble.nvim",
-		requires = "kyazdani42/nvim-web-devicons",
-		config = function() require("trouble").setup({}) end
+	-- LSP Package management --
+
+	use {'williamboman/mason.nvim',
+		config = function() require('mason').setup() end
+	}
+
+	use {'jayp0521/mason-null-ls.nvim',
+		reqires = {
+			'williamboman/mason.nvim',
+			'jose-elias-alvarez/null-ls.nvim'
+		},
+		config = function() require("mason-null-ls").setup() end
+	}
+
+	use {'williamboman/mason-lspconfig.nvim',
+		requires = {
+			'williamboman/mason.nvim',
+			'neovim/nvim-lspconfig'
+		},
+		config = function() require("mason-lspconfig").setup() end
 	}
 
 	if install_plugins then

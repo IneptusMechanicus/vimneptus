@@ -1,6 +1,6 @@
 require('nvim-treesitter.configs').setup({
 	highlight = {
-		enable = true,
+		enable = true
 	},
 	-- :help nvim-treesitter-textobjects-modules
 	textobjects = {

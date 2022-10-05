@@ -70,52 +70,13 @@ require('packer').startup(function(use)
 		config = function() require('plugins.treesitter') end
 	}
 
-	-- Autocomplete plugins --
-	use {'neovim/nvim-lspconfig'}
-	use {'hrsh7th/nvim-cmp'}
-	use {'hrsh7th/cmp-buffer'}
-	use {'hrsh7th/cmp-path'}
-	use {'saadparwaiz1/cmp_luasnip'}
-	use {'hrsh7th/cmp-nvim-lsp'}
-	use {'hrsh7th/cmp-nvim-lua'}
-	use {'L3MON4D3/LuaSnip'}
-
-	use {'windwp/nvim-autopairs',
-    	config = function() require("nvim-autopairs").setup {} end
-	}
-
-	-- Diagnostics (Linting) --
-	use {'jose-elias-alvarez/null-ls.nvim',
-		event = { 'BufRead', 'BufNewFile' },
-		config = function() require('null-ls').setup() end
-	}
-
 	-- Comment plugin --
 	use {'terrortylor/nvim-comment',
 		config = function() require('nvim_comment').setup() end
 	}
 
-	-- LSP Package management --
-
-	use {'williamboman/mason.nvim',
-		config = function() require('mason').setup() end
-	}
-
-	use {'jayp0521/mason-null-ls.nvim',
-		reqires = {
-			'williamboman/mason.nvim',
-			'jose-elias-alvarez/null-ls.nvim'
-		},
-		config = function() require("mason-null-ls").setup() end
-	}
-
-	use {'williamboman/mason-lspconfig.nvim',
-		requires = {
-			'williamboman/mason.nvim',
-			'neovim/nvim-lspconfig'
-		},
-		config = function() require("mason-lspconfig").setup() end
-	}
+	-- LSP --
+	use {'neovim/nvim-lspconfig'}
 
 	if install_plugins then
 		require('packer').sync()

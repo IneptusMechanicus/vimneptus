@@ -14,7 +14,6 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	vim.cmd('packadd packer.nvim')
 	install_plugins = true
 end
-
 --------------------------
 -- Plugin Installation  --
 --------------------------
@@ -75,8 +74,49 @@ require('packer').startup(function(use)
 		config = function() require('nvim_comment').setup() end
 	}
 
+	-- Auto parentheses --
+	use {'windwp/nvim-autopairs',
+		config = function() require('nvim-autopairs').setup() end
+	}
+
 	-- LSP --
 	use {'neovim/nvim-lspconfig'}
+	use {'williamboman/mason.nvim',
+		config = function() require('mason').setup {} end
+	}
+
+	use {'williamboman/mason-lspconfig.nvim',
+		config = function()
+			require('mason-lspconfig').setup()
+
+			require("mason-lspconfig").setup_handlers({
+				function (server_name)
+					require("lspconfig")[server_name].setup {}
+				end
+			})
+		end,
+	}
+
+	use {'mfussenegger/nvim-lint',
+		config = function()
+			require('lint').linters_by_ft = {
+				bash = {'shellcheck'},
+				cpp = {'cpplint'},
+				css = {'stylelint'},
+				scss = {'stylelint'},
+				javascript = {'jshint'},
+				lua = {'luacheck'},
+				markdown = {'vale'},
+				php = {'phpcs'},
+				python = {'pylint'},
+			}
+		end
+	}
+
+	use {'folke/trouble.nvim',
+		requires = 'kyazdani42/nvim-web-devicons',
+		config = function()	require("trouble").setup()end
+	}
 
 	if install_plugins then
 		require('packer').sync()

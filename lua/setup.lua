@@ -107,7 +107,7 @@ require('packer').startup(function(use)
 				javascript = {'jshint'},
 				lua = {'luacheck'},
 				markdown = {'vale'},
-				php = {'phpcs'},
+				php = {'php'},
 				python = {'pylint'},
 			}
 		end

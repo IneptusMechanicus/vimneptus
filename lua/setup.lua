@@ -47,7 +47,6 @@ require('packer').startup(function(use)
 	use {'ojroques/vim-oscyank'}
 
 	-- Open File Tabs --
-	use {'famiu/bufdelete.nvim'}
 	use {'akinsho/bufferline.nvim',
 		requires = 'kyazdani42/nvim-web-devicons',
 		config = function() require('plugins.bufferline') end
@@ -88,7 +87,6 @@ require('packer').startup(function(use)
 	use {'williamboman/mason-lspconfig.nvim',
 		config = function()
 			require('mason-lspconfig').setup()
-
 			require("mason-lspconfig").setup_handlers({
 				function (server_name)
 					require("lspconfig")[server_name].setup {}
@@ -115,7 +113,11 @@ require('packer').startup(function(use)
 
 	use {'folke/trouble.nvim',
 		requires = 'kyazdani42/nvim-web-devicons',
-		config = function()	require("trouble").setup()end
+		config = function() require("trouble").setup() end
+	}
+
+	use {'NvChad/nvim-colorizer.lua',
+		config = function() require('colorizer').setup() end
 	}
 
 	if install_plugins then

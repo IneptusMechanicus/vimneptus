@@ -13,6 +13,6 @@ require('bufferline').setup({
 			}
 		},
 		separator_style = "slant",
-		close_command = "Bdelete! %d"
+		close_command = "bdelete! %d"
 	}
 })

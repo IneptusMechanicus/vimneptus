@@ -1,55 +1,35 @@
 local vim = vim
-
 local M = {}
 
 M.classic = {
 	name = 'mechanicus',
-	base0 = '#222426',
-	base1 = '#272a30',
-	base2 = '#26292C',
-	base3 = '#2E323C',
-	base4 = '#333842',
-	base5 = '#4d5154',
+	base0 = '#262622',
+	base1 = '#302F27',
+	base2 = '#2B2A22',
+	base3 = '#3C3A2E',
+	base4 = '#424033',
+	base5 = '#54534d',
 	base6 = '#9ca0a4',
 	base7 = '#b1b1b1',
 	base8 = '#e3e3e1',
 	border = '#a1b5b1',
-	brown = '#504945',
-	white = '#f8f8f0',
+	brown = '#88481c',
+	white = '#f0c674',
 	grey = '#8F908A',
 	black = '#000000',
 	pink = '#f92672',
-	green = '#a6e22e',
-	aqua = '#66d9ef',
-	yellow = '#e6db74',
-	orange = '#fd971f',
-	purple = '#ae81ff',
-	red = '#e95678',
-	diff_add = '#3d5213',
-	diff_remove = '#4a0f23',
+	green = '#85e084',
+	darkGreen = '#529d51',
+	aqua = '#7abcf5',
+	yellow = '#e6f074',
+	orange = '#d57635',
+	purple = '#a870b1',
+	red = '#fb6767',
+	diff_add = '#75b774',
+	diff_remove = '#fb6767',
 	diff_change = '#27406b',
 	diff_text = '#23324d',
 }
-
-local function remove_italics(config, colors)
-	if not config.italics and colors.style == 'italic' then
-		colors.style = nil
-	end
-	return colors
-end
-
-local function highlighter(config)
-	return function(group, color)
-		color = remove_italics(config, color)
-		local style = color.style and 'gui=' .. color.style or 'gui=NONE'
-		local fg = color.fg and 'guifg = ' .. color.fg or 'guifg = NONE'
-		local bg = color.bg and 'guibg = ' .. color.bg or 'guibg = NONE'
-		local sp = color.sp and 'guisp = ' .. color.sp or ''
-		vim.cmd(
-			'highlight ' .. group .. ' ' .. style .. ' ' .. fg .. ' ' .. bg .. ' ' .. sp
-		)
-	end
-end
 
 M.load_syntax = function(palette)
 	return {
@@ -59,25 +39,6 @@ M.load_syntax = function(palette)
 		},
 		NormalFloat = {
 			bg = palette.base1,
-		},
-		Pmenu = {
-			fg = palette.white,
-			bg = palette.base3,
-		},
-		PmenuSel = {
-			fg = palette.base4,
-			bg = palette.orange,
-		},
-		PmenuSelBold = {
-			fg = palette.base4,
-			bg = palette.orange,
-		},
-		PmenuThumb = {
-			fg = palette.purple,
-			bg = palette.green,
-		},
-		PmenuSbar = {
-			bg = palette.base3,
 		},
 		Cursor = {
 			style = 'reverse',
@@ -151,7 +112,7 @@ M.load_syntax = function(palette)
 			bg = palette.base3,
 		},
 		TabLineSel = {
-			bg = palette.base4,
+			bg = palette.base2,
 		},
 		SpellBad = {
 			fg = palette.red,
@@ -195,7 +156,7 @@ M.load_syntax = function(palette)
 			fg = palette.green,
 		},
 		diffRemoved = {
-			fg = palette.pink,
+			fg = palette.red,
 		},
 		Folded = {
 			fg = palette.grey,
@@ -211,26 +172,30 @@ end
 M.load_plugin_syntax = function(palette)
 	return {
 		TSString = {
-			fg = palette.yellow,
+			fg = palette.darkGreen,
+			style = 'italic'
 		},
 		TSInclude = {
-			fg = palette.pink,
+			fg = palette.aqua,
+			style = 'italic'
 		},
 		TSVariable = {
-			fg = palette.white,
+			fg = palette.orange,
 		},
 		TSVariableBuiltin = {
 			fg = palette.orange,
 		},
 		TSAnnotation = {
-			fg = palette.green,
+			fg = palette.darkGreen,
+			style = 'italic'
 		},
 		TSComment = {
 			fg = palette.base6,
-		style = 'italic',
+			style = 'italic',
 		},
 		TSConstant = {
-			fg = palette.aqua,
+			fg = palette.purple,
+			style = 'bold'
 		},
 		TSConstBuiltin = {
 			fg = palette.purple,
@@ -239,71 +204,81 @@ M.load_plugin_syntax = function(palette)
 			fg = palette.purple,
 		},
 		TSConstructor = {
-			fg = palette.aqua,
+			fg = palette.yellow,
+			style = 'bold'
 		},
 		TSConditional = {
-			fg = palette.pink,
+			fg = palette.aqua,
+			style = 'italic'
 		},
 		TSCharacter = {
-			fg = palette.yellow,
+			fg = palette.darkGreen,
+			style = 'italic'
 		},
 		TSFunction = {
 			fg = palette.green,
-			style = 'italic',
+			style = 'bold',
 		},
 		TSFuncBuiltin = {
-			fg = palette.aqua,
+			fg = palette.brown,
 		},
 		TSFuncMacro = {
 			fg = palette.green,
 			style = 'italic',
 		},
 		TSKeyword = {
-			fg = palette.pink,
+			fg = palette.aqua,
 			style = 'italic',
 		},
 		TSKeywordFunction = {
-			fg = palette.pink,
+			fg = palette.yellow,
 			style = 'italic',
 		},
 		TSKeywordOperator = {
-			fg = palette.pink,
+			fg = palette.aqua,
+			style = 'italic'
 		},
 		TSKeywordReturn = {
-			fg = palette.pink,
+			fg = palette.aqua,
+			style = 'italic'
 		},
 		TSMethod = {
 			fg = palette.green,
+			style = 'bold'
 		},
 		TSNamespace = {
-			fg = palette.purple,
+			fg = palette.aqua,
+			style = 'italic'
 		},
 		TSNumber = {
 			fg = palette.purple,
 		},
 		TSOperator = {
-			fg = palette.pink,
+			fg = palette.yellow,
+			style = 'italic'
 		},
 		TSParameter = {
-			fg = palette.white,
+			fg = palette.purple,
 		},
 		TSParameterReference = {
-			fg = palette.white,
+			fg = palette.purple,
 		},
 		TSProperty = {
-			fg = palette.white,
+			fg = palette.orange,
 		},
 		TSPunctDelimiter = {
-			fg = palette.white,
+			fg = palette.yellow,
+			style = 'bold'
 		},
 		TSPunctBracket = {
-			fg = palette.white,
+			fg = palette.brown,
 		},
 		TSPunctSpecial = {
-			fg = palette.pink,
+			fg = palette.yellow,
 		},
 		TSRepeat = {
-			fg = palette.pink,
+			fg = palette.aqua,
+			style = 'italic'
 		},
 		TSStringRegex = {
 			g = palette.purple,
@@ -312,25 +287,29 @@ M.load_plugin_syntax = function(palette)
 			fg = palette.purple,
 		},
 		TSTag = {
-			fg = palette.pink,
+			fg = palette.yellow,
+			style = 'bold'
 		},
 		TSTagDelimiter = {
-			fg = palette.white,
+			fg = palette.brown,
 		},
 		TSTagAttribute = {
-			fg = palette.green,
+			fg = palette.orange,
 		},
 		TSLabel = {
 			fg = palette.pink,
 		},
 		TSType = {
-			fg = palette.aqua,
+			fg = palette.yellow,
+			style = 'bold'
 		},
 		TSException = {
-			fg = palette.pink,
+			fg = palette.aqua,
+			style = 'italic'
 		},
 		TSField = {
 			fg = palette.white,
+			style = 'italic'
 		},
 		TSFloat = {
 			fg = palette.purple,
@@ -338,6 +317,7 @@ M.load_plugin_syntax = function(palette)
 		dbui_tables = {
 			fg = palette.white,
 		},
+		-- Diagnostics --
 		DiagnosticSignError = {
 			fg = palette.red,
 		},
@@ -359,65 +339,11 @@ M.load_plugin_syntax = function(palette)
 		DiagnosticVirtualTextInfo = {
 			fg = palette.white,
 		},
-		DiagnosticVirtualTextHint = {
-			fg = palette.aqua,
-		},
-		DiagnosticUnderlineError = {
-			style = 'undercurl',
-			sp = palette.red,
-		},
-		DiagnosticUnderlineWarn = {
-			style = 'undercurl',
-			sp = palette.yellow,
-		},
-		DiagnosticUnderlineInfo = {
-			style = 'undercurl',
-			sp = palette.white,
-		},
-		DiagnosticUnderlineHint = {
-			style = 'undercurl',
-			sp = palette.aqua,
-		},
-		CursorWord0 = {
-			bg = palette.white,
-			fg = palette.black,
-		},
-		CursorWord1 = {
-			bg = palette.white,
-			fg = palette.black,
-		},
-		NvimTreeFolderName = {
-			fg = palette.white,
-		},
-		NvimTreeRootFolder = {
-			fg = palette.pink,
-		},
-		NvimTreeSpecialFile = {
-			fg = palette.white,
-			style = 'NONE',
-		},
-
-		-- Telescope
-		TelescopeBorder = {
-			fg = palette.base7,
-		},
-		TelescopeNormal = {
-			fg = palette.base8,
-			bg = palette.base0,
-		},
-		TelescopeSelection = {
-			fg = palette.white,
-			style = 'bold',
-		},
-		TelescopeSelectionCaret = {
-			fg = palette.green,
-		},
-		TelescopeMultiSelection = {
-			fg = palette.pink,
-		},
-		TelescopeMatching = {
-			fg = palette.aqua,
-		},
+		DiagnosticVirtualTextHint = { fg = palette.aqua },
+		DiagnosticUnderlineError = { style = 'undercurl', sp = palette.red },
+		DiagnosticUnderlineWarn = { style = 'undercurl', sp = palette.yellow },
+		DiagnosticUnderlineInfo = { style = 'undercurl', sp = palette.white },
+		DiagnosticUnderlineHint = { style = 'undercurl', sp = palette.aqua },
 
 		-- hrsh7th/nvim-cmp
 		CmpDocumentation = { fg = palette.white, bg = palette.base1 },
@@ -450,6 +376,16 @@ M.load_plugin_syntax = function(palette)
 	}
 end
 
+local function highlight(group, color)
+		local style = color.style and 'gui=' .. color.style or 'gui=NONE'
+		local fg = color.fg and 'guifg = ' .. color.fg or 'guifg = NONE'
+		local bg = color.bg and 'guibg = ' .. color.bg or 'guibg = NONE'
+		local sp = color.sp and 'guisp = ' .. color.sp or ''
+		vim.cmd(
+			'highlight ' .. group .. ' ' .. style .. ' ' .. fg .. ' ' .. bg .. ' ' .. sp
+		)
+end
+
 local default_config = {
 	palette = M.classic,
 	custom_hlgroups = {},
@@ -469,7 +405,6 @@ M.setup = function(config)
 	vim.g.colors_name = used_palette.name
 	local syntax = M.load_syntax(used_palette)
 	syntax = vim.tbl_deep_extend('keep', config.custom_hlgroups, syntax)
-	local highlight = highlighter(config)
 	for group, colors in pairs(syntax) do
 		highlight(group, colors)
 	end

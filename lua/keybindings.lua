@@ -1,29 +1,36 @@
+local binding = vim.keymap
+local g = vim.g
 --------------------------
 --     Keybindings      --
 --------------------------
-vim.g.mapleader = ' '
+g.mapleader = ' '
 
 -- Main
-vim.keymap.set('n', '<leader>w', '<cmd>write<cr>')
-vim.keymap.set('n', '<leader>q','<cmd>Bdelete<cr>')
-vim.keymap.set('n', '<leader>a', ':keepjumps normal! ggVG<cr>')
-vim.keymap.set('n', '<C-q>', '<cmd>qa<cr>')
+binding.set('n', '<leader>w', '<cmd>write<cr>')
+binding.set('n', '<leader>q','<cmd>bdelete<cr>')
+binding.set('n', '<leader>a', ':keepjumps normal! ggVG<cr>')
+binding.set('n', '<C-q>', '<cmd>qa<cr>')
 
 -- Clipboard hotkeys
-vim.keymap.set({'n', 'v', 'x'}, '<leader>c', '"+y')
-vim.keymap.set({'n', 'v', 'x'}, '<C-c>', '<cmd>OSCYank<cr>')
-vim.keymap.set({'n', 'x'}, '<leader>v', '"+p')
+binding.set({'n', 'v', 'x'}, '<leader>c', '"+y')
+binding.set({'n', 'v', 'x'}, '<C-c>', '<cmd>OSCYank<cr>')
+binding.set({'n', 'x'}, '<leader>v', '"+p')
 
 -- File explorer
-vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle<cr>', {desc = "Toggle File Explorere"})
-vim.keymap.set('n', '<leader>o', '<cmd>Neotree focus<cr>', {desc = "Focus File Explorere"})
+binding.set('n', '<leader>e', '<cmd>Neotree toggle<cr>', {desc = "Toggle File Explorere"})
+binding.set('n', '<leader>o', '<cmd>Neotree focus<cr>', {desc = "Focus File Explorere"})
 
 -- Tabline cycling --
-vim.keymap.set('n', '<S-l>', '<cmd>BufferLineCycleNext<cr>')
-vim.keymap.set('n', '<S-h>', '<cmd>BufferLineCyclePrev<cr>')
+binding.set('n', '<S-l>', '<cmd>BufferLineCycleNext<cr>')
+binding.set('n', '<S-h>', '<cmd>BufferLineCyclePrev<cr>')
 
 
 -- Comments --
 
-vim.keymap.set('n', '<C-/>', '<cmd>CommentToggle<cr>')
-vim.keymap.set({'v', 'x'}, '<C-/>', '<cmd>\'<,\'>CommentToggle<cr>')
+binding.set('n', '<C-/>', '<cmd>CommentToggle<cr>')
+binding.set({'v', 'x'}, '<C-/>', '<cmd>\'<,\'>CommentToggle<cr>')
+
+
+-- Trouble Toggle --
+
+binding.set('n', '<leader>t', '<cmd>TroubleToggle<cr>')

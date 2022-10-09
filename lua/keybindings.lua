@@ -7,7 +7,7 @@ g.mapleader = ' '
 
 -- Main
 binding.set('n', '<leader>w', '<cmd>write<cr>')
-binding.set('n', '<leader>q','<cmd>bdelete<cr>')
+binding.set('n', '<leader>q','<cmd>Bdelete<cr>')
 binding.set('n', '<leader>a', ':keepjumps normal! ggVG<cr>')
 binding.set('n', '<C-q>', '<cmd>qa<cr>')
 

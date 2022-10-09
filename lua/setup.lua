@@ -14,6 +14,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	vim.cmd('packadd packer.nvim')
 	install_plugins = true
 end
+
 --------------------------
 -- Plugin Installation  --
 --------------------------
@@ -34,7 +35,7 @@ require('packer').startup(function(use)
 	-- Start Screen --
 	use {'goolord/alpha-nvim',
 		requires = { 'kyazdani42/nvim-web-devicons' },
-		config = function() require('alpha').setup(require('plugins.alpha').config) end,
+		config = function() require('plugins.alpha') end,
 	}
 
 	-- Status Line --
@@ -45,6 +46,7 @@ require('packer').startup(function(use)
 	-- Clipboard and popups utils --
 	use {'nvim-lua/popup.nvim'}
 	use {'ojroques/vim-oscyank'}
+	use {'famiu/bufdelete.nvim'}
 
 	-- Open File Tabs --
 	use {'akinsho/bufferline.nvim',
@@ -70,12 +72,12 @@ require('packer').startup(function(use)
 
 	-- Comment plugin --
 	use {'terrortylor/nvim-comment',
-		config = function() require('nvim_comment').setup() end
+		config = function() require('plugins.comment').setup() end
 	}
 
 	-- Auto parentheses --
 	use {'windwp/nvim-autopairs',
-		config = function() require('nvim-autopairs').setup() end
+		config = function() require('plugins.autopairs').setup() end
 	}
 
 	-- LSP --

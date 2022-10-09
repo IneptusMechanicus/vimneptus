@@ -1,3 +1,5 @@
+local status_ok, alpha = pcall(require, "alpha")
+if not status_ok then return end
 local if_nil = vim.F.if_nil
 
 local default_terminal = {
@@ -21,7 +23,7 @@ local default_header = {
 		[[| (\ \) ||  __)   | |   | |( (   ) )   | |   | |(_)| |]],
 		[[| | \   || (      | |   | | \ \_/ /    | |   | |   | |]],
 		[[| )  \  || (____/\| (___) |  \   /  ___) (___| )   ( |]],
-		[[|/    )_)(_______/(_______)   \_/   \_______/|/     \|]]                                        
+		[[|/    )_)(_______/(_______)   \_/   \_______/|/     \|]]
 	},
 	opts = {
 		position = "center",
@@ -92,7 +94,7 @@ local section = {
 	footer = footer,
 }
 
-local config = {
+alpha.setup({
 	layout = {
 		{ type = "padding", val = 2 },
 		section.header,
@@ -102,15 +104,5 @@ local config = {
 	},
 	opts = {
 		margin = 5,
-	},
-}
-
-return {
-	button = button,
-	section = section,
-	config = config,
-	-- theme config
-	leader = leader,
-	-- deprecated
-	opts = config,
-}
+	}
+})

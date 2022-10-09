@@ -34,13 +34,8 @@ require('packer').startup(function(use)
 
 	-- Start Screen --
 	use {'goolord/alpha-nvim',
-		requires = { 'kyazdani42/nvim-web-devicons' },
+		requires = 'kyazdani42/nvim-web-devicons',
 		config = function() require('plugins.alpha') end,
-	}
-
-	-- Status Line --
-	use {'nvim-lualine/lualine.nvim',
-		config = function() require('plugins.lualine') end
 	}
 
 	-- Clipboard and popups utils --
@@ -48,69 +43,54 @@ require('packer').startup(function(use)
 	use {'ojroques/vim-oscyank'}
 	use {'famiu/bufdelete.nvim'}
 
-	-- Open File Tabs --
+	-- Files and Tabs --
 	use {'akinsho/bufferline.nvim',
 		requires = 'kyazdani42/nvim-web-devicons',
 		config = function() require('plugins.bufferline') end
 	}
 
-	-- File Explorer --
 	use {'nvim-neo-tree/neo-tree.nvim',
 		branch = "v2.x",
 		requires = {
 			'nvim-lua/plenary.nvim',
+			'kyazdan/nvim-web-devicons',
 			'MunifTanjim/nui.nvim',
 		},
 		config = function() require('plugins.neotree') end
 	}
 
-	-- Code highlighting --
-	use {'nvim-treesitter/nvim-treesitter',
-		run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-		config = function() require('plugins.treesitter') end
+	use {'nvim-lualine/lualine.nvim',
+		config = function() require('plugins.lualine') end
 	}
 
-	-- Comment plugin --
+	-- Coding quick commands --
 	use {'terrortylor/nvim-comment',
-		config = function() require('plugins.comment').setup() end
+		config = function() require('plugins.comment') end
 	}
 
-	-- Auto parentheses --
 	use {'windwp/nvim-autopairs',
-		config = function() require('plugins.autopairs').setup() end
+		config = function() require('plugins.autopairs') end
 	}
 
 	-- LSP --
 	use {'neovim/nvim-lspconfig'}
 	use {'williamboman/mason.nvim',
-		config = function() require('mason').setup {} end
+		config = function() require('plugins.mason') end
 	}
 
 	use {'williamboman/mason-lspconfig.nvim',
-		config = function()
-			require('mason-lspconfig').setup()
-			require("mason-lspconfig").setup_handlers({
-				function (server_name)
-					require("lspconfig")[server_name].setup {}
-				end
-			})
-		end,
+		config = function() require('plugins.masonlsp') end,
 	}
 
+	use {'nvim-treesitter/nvim-treesitter',
+		run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+		config = function() require('plugins.treesitter') end
+	}
+
+	-- Errors and Linting --
+
 	use {'mfussenegger/nvim-lint',
-		config = function()
-			require('lint').linters_by_ft = {
-				bash = {'shellcheck'},
-				cpp = {'cpplint'},
-				css = {'stylelint'},
-				scss = {'stylelint'},
-				javascript = {'jshint'},
-				lua = {'luacheck'},
-				markdown = {'vale'},
-				php = {'php'},
-				python = {'pylint'},
-			}
-		end
+		config = function() require('plugins.lint') end
 	}
 
 	use {'folke/trouble.nvim',
@@ -121,6 +101,8 @@ require('packer').startup(function(use)
 	use {'NvChad/nvim-colorizer.lua',
 		config = function() require('colorizer').setup() end
 	}
+
+	-- Autocomplete --
 
 	if install_plugins then
 		require('packer').sync()

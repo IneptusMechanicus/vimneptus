@@ -16,6 +16,6 @@ bufferline.setup({
 			}
 		},
 		separator_style = "slant",
-		close_command = "bdelete! %d"
+		close_command = "Bdelete! %d"
 	}
 })

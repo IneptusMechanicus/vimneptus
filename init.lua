@@ -7,5 +7,6 @@ local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/lualine.
 if vim.fn.empty(vim.fn.glob(install_path)) <= 0 then
 	vim.cmd('set list')
 	vim.cmd('set lazyredraw')
+	vim.cmd('set nowrap')
 	vim.cmd('colorscheme mechanicus')
 end

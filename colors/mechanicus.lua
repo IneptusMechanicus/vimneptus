@@ -220,7 +220,7 @@ M.load_plugin_syntax = function(palette)
 			style = 'bold',
 		},
 		TSFuncBuiltin = {
-			fg = palette.brown,
+			fg = palette.green,
 		},
 		TSFuncMacro = {
 			fg = palette.green,
@@ -255,7 +255,7 @@ M.load_plugin_syntax = function(palette)
 		},
 		TSOperator = {
 			fg = palette.yellow,
-			style = 'italic'
+			style = 'bold'
 		},
 		TSParameter = {
 			fg = palette.purple,
@@ -317,6 +317,7 @@ M.load_plugin_syntax = function(palette)
 		dbui_tables = {
 			fg = palette.white,
 		},
+
 		-- Diagnostics --
 		DiagnosticSignError = {
 			fg = palette.red,

@@ -5,6 +5,7 @@
 -- .1 General --
 
 vim.opt.number = true
+vim.opt.numberwidth = 5
 vim.opt.mouse = 'a'
 
 -- .2 Search --

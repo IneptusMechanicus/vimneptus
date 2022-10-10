@@ -15,6 +15,8 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	install_plugins = true
 end
 
+
+
 --------------------------
 -- Plugin Installation  --
 --------------------------
@@ -50,7 +52,7 @@ require('packer').startup(function(use)
 	}
 
 	use {'nvim-neo-tree/neo-tree.nvim',
-		branch = "v2.x",
+		branch = 'v2.x',
 		requires = {
 			'nvim-lua/plenary.nvim',
 			'kyazdan/nvim-web-devicons',
@@ -73,7 +75,9 @@ require('packer').startup(function(use)
 	}
 
 	-- LSP --
-	use {'neovim/nvim-lspconfig'}
+	use {'neovim/nvim-lspconfig'
+		-- config = function() require('plugins.lsp') end
+	}
 	use {'williamboman/mason.nvim',
 		config = function() require('plugins.mason') end
 	}
@@ -95,14 +99,23 @@ require('packer').startup(function(use)
 
 	use {'folke/trouble.nvim',
 		requires = 'kyazdani42/nvim-web-devicons',
-		config = function() require("trouble").setup() end
+		config = function() require('plugins.trouble') end
 	}
 
 	use {'NvChad/nvim-colorizer.lua',
-		config = function() require('colorizer').setup() end
+		config = function() require('plugins.colorizer') end
 	}
 
 	-- Autocomplete --
+
+	use {'hrsh7th/nvim-cmp',
+		config = function() require('plugins.cmp') end
+	}
+	use {'hrsh7th/cmp-buffer'}
+	use {'hrsh7th/cmp-path'}
+	use {'saadparwaiz1/cmp_luasnip'}
+	use {'hrsh7th/cmp-nvim-lsp'}
+	use {'L3MON4D3/LuaSnip'}
 
 	if install_plugins then
 		require('packer').sync()

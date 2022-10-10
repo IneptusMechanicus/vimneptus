@@ -15,8 +15,6 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	install_plugins = true
 end
 
-
-
 --------------------------
 -- Plugin Installation  --
 --------------------------
@@ -75,9 +73,7 @@ require('packer').startup(function(use)
 	}
 
 	-- LSP --
-	use {'neovim/nvim-lspconfig'
-		-- config = function() require('plugins.lsp') end
-	}
+	use {'neovim/nvim-lspconfig'}
 	use {'williamboman/mason.nvim',
 		config = function() require('plugins.mason') end
 	}
@@ -108,14 +104,14 @@ require('packer').startup(function(use)
 
 	-- Autocomplete --
 
-	use {'hrsh7th/nvim-cmp',
-		config = function() require('plugins.cmp') end
-	}
 	use {'hrsh7th/cmp-buffer'}
 	use {'hrsh7th/cmp-path'}
 	use {'saadparwaiz1/cmp_luasnip'}
 	use {'hrsh7th/cmp-nvim-lsp'}
 	use {'L3MON4D3/LuaSnip'}
+	use {'hrsh7th/nvim-cmp',
+		config = function () require('plugins.cmp') end
+	}
 
 	if install_plugins then
 		require('packer').sync()

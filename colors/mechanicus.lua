@@ -33,63 +33,26 @@ M.classic = {
 
 M.load_syntax = function(palette)
 	return {
-		Normal = {
-			fg = palette.white,
-			bg = palette.base2,
-		},
-		NormalFloat = {
-			bg = palette.base1,
-		},
-		Cursor = {
-			style = 'reverse',
-		},
-		ColorColumn = {
-			bg = palette.base3,
-		},
-		CursorLine = {
-			bg = palette.base3,
-		},
-		NonText = { -- used for "eol", "extends" and "precedes" in listchars
-			fg = palette.base5,
-		},
-		Visual = {
-			bg = palette.base4,
-		},
-		VisualNOS = {
-			bg = palette.base3,
-		},
-		Search = {
-			fg = palette.base2,
-			bg = palette.yellow,
-		},
-		IncSearch = {
-			fg = palette.base2,
-		bg = palette.orange,
-		},
-		CursorLineNr = {
-			fg = palette.orange,
-			bg = palette.base2,
-		},
-		MatchParen = {
-			fg = palette.pink,
-		},
-		Question = {
-			fg = palette.yellow,
-		},
-		ModeMsg = {
-			fg = palette.white,
-			style = 'bold',
-		},
-		MoreMsg = {
-			fg = palette.white,
-			style = 'bold',
-		},
-		ErrorMsg = {
-			fg = palette.red,
-			style = 'bold',
-		},
-		WarningMsg = {
-			fg = palette.yellow,
+		Normal = { fg = palette.white, bg = palette.base2 },
+		NormalFloat = { bg = palette.base1 },
+
+		Cursor = { style = 'reverse' },
+		CursorColumn = { bg = palette.base3 },
+		CursorLine = { bg = palette.base3 },
+
+		NonText = { fg = palette.base5 },
+
+		Visual = { bg = palette.base4 },
+		VisualNOS = { bg = palette.base3 },
+		Search = { fg = palette.base2, bg = palette.yellow },
+		IncSearch = { fg = palette.base2, bg = palette.orange },
+		CursorLineNr = { fg = palette.orange, bg = palette.base2 },
+		MatchParen = { fg = palette.pink },
+		Question = { fg = palette.yellow },
+		ModeMsg = { fg = palette.white, style = 'bold' },
+		MoreMsg = { fg = palette.white, style = 'bold' },
+		ErrorMsg = { fg = palette.red, style = 'bold' },
+		WarningMsg = { fg = palette.yellow,
 			style = 'bold',
 		},
 		VertSplit = {
@@ -97,7 +60,7 @@ M.load_syntax = function(palette)
 		},
 		LineNr = {
 			fg = palette.base5,
-			bg = palette.base2,
+			bg = palette.base0,
 		},
 		SignColumn = {
 			fg = palette.white,
@@ -166,6 +129,11 @@ M.load_syntax = function(palette)
 			fg = palette.white,
 			bg = palette.black,
 		},
+		Pmenu = { fg = palette.white, bg = palette.base3 },
+		PmenuSel = { fg = palette.base4, bg = palette.orange },
+		PmenuSelBold = { fg = palette.base4, bg = palette.orange },
+		PmenuThumb = { fg = palette.purple, bg = palette.green },
+		PmenuSbar = { bg = palette.base3 },
 	}
 end
 
@@ -307,39 +275,19 @@ M.load_plugin_syntax = function(palette)
 			fg = palette.aqua,
 			style = 'italic'
 		},
-		TSField = {
-			fg = palette.white,
-			style = 'italic'
-		},
-		TSFloat = {
-			fg = palette.purple,
-		},
-		dbui_tables = {
-			fg = palette.white,
-		},
+		TSField = { fg = palette.white, style = 'italic' },
+		TSFloat = { fg = palette.purple },
+
+		dbui_tables = { fg = palette.white },
 
 		-- Diagnostics --
-		DiagnosticSignError = {
-			fg = palette.red,
-		},
-		DiagnosticSignWarn = {
-			fg = palette.yellow,
-		},
-		DiagnosticSignInfo = {
-			fg = palette.white,
-		},
-		DiagnosticSignHint = {
-			fg = palette.aqua,
-		},
-		DiagnosticVirtualTextError = {
-			fg = palette.red,
-		},
-		DiagnosticVirtualTextWarn = {
-			fg = palette.yellow,
-		},
-		DiagnosticVirtualTextInfo = {
-			fg = palette.white,
-		},
+		DiagnosticSignError = {fg = palette.red },
+		DiagnosticSignWarn = { fg = palette.yellow },
+		DiagnosticSignInfo = { fg = palette.white },
+		DiagnosticSignHint = { fg = palette.aqua },
+		DiagnosticVirtualTextError = { fg = palette.red },
+		DiagnosticVirtualTextWarn = { fg = palette.yellow },
+		DiagnosticVirtualTextInfo = { fg = palette.white },
 		DiagnosticVirtualTextHint = { fg = palette.aqua },
 		DiagnosticUnderlineError = { style = 'undercurl', sp = palette.red },
 		DiagnosticUnderlineWarn = { style = 'undercurl', sp = palette.yellow },

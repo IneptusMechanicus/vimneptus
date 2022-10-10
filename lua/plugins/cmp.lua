@@ -13,12 +13,13 @@ cmp.setup({
 			luasnip.lsp_expand(args.body)
 		end
 	},
-	sources = {
-		{name = 'path'},
-		{name = 'nvim_lsp'},
-		{name = 'buffer'},
-		{name = 'luasnip'},
-	},
+	sources =  cmp.config.sources({
+		{ name = "nvim_lsp" },
+		{ name = "luasnip" },
+		{ name = "path" },
+	}, {
+		{ name = "buffer"},
+	}),
 	window = {
 		documentation = cmp.config.window.bordered()
 	},

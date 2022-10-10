@@ -7,6 +7,9 @@
 vim.opt.number = true
 vim.opt.numberwidth = 5
 vim.opt.mouse = 'a'
+vim.opt.list = true
+vim.opt.lazyredraw = true
+vim.opt.wrap = false
 
 -- .2 Search --
 

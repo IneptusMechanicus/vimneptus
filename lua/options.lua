@@ -22,6 +22,7 @@ vim.opt.hlsearch = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = false
+vim.opt.autoindent = true
 
 vim.opt.fillchars='eob: '
 vim.opt.listchars='tab:| ,trail:*,eol:¬'

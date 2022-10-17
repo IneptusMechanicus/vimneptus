@@ -31,17 +31,16 @@ M.classic = {
 	diff_text = '#23324d',
 }
 
-M.load_syntax = function(palette)
+M.load_colors = function(palette)
 	return {
+
+		-- Base --
 		Normal = { fg = palette.white, bg = palette.base2 },
 		NormalFloat = { bg = palette.base1 },
-
 		Cursor = { style = 'reverse' },
 		CursorColumn = { bg = palette.base3 },
 		CursorLine = { bg = palette.base3 },
-
 		NonText = { fg = palette.base5 },
-
 		Visual = { bg = palette.base4 },
 		VisualNOS = { bg = palette.base3 },
 		Search = { fg = palette.base2, bg = palette.yellow },
@@ -52,231 +51,84 @@ M.load_syntax = function(palette)
 		ModeMsg = { fg = palette.white, style = 'bold' },
 		MoreMsg = { fg = palette.white, style = 'bold' },
 		ErrorMsg = { fg = palette.red, style = 'bold' },
-		WarningMsg = { fg = palette.yellow,
-			style = 'bold',
-		},
-		VertSplit = {
-			fg = palette.brown,
-		},
-		LineNr = {
-			fg = palette.base5,
-			bg = palette.base0,
-		},
-		SignColumn = {
-			fg = palette.white,
-			bg = palette.base2,
-		},
-		StatusLine = {
-			fg = palette.base7,
-			bg = palette.base3,
-		},
-		StatusLineNC = {
-			fg = palette.grey,
-			bg = palette.base3,
-		},
-		TabLineSel = {
-			bg = palette.base2,
-		},
-		SpellBad = {
-			fg = palette.red,
-			style = 'undercurl',
-		},
-		SpellCap = {
-			fg = palette.purple,
-			style = 'undercurl',
-		},
-		SpellRare = {
-			fg = palette.aqua,
-			style = 'undercurl',
-		},
-		SpellLocal = {
-			fg = palette.pink,
-			style = 'undercurl',
-		},
-		SpecialKey = {
-			fg = palette.pink,
-		},
-		Title = {
-			fg = palette.yellow,
-			style = 'bold',
-		},
-		Directory = {
-			fg = palette.aqua,
-		},
-		DiffAdd = {
-			bg = palette.diff_add,
-		},
-		DiffDelete = {
-			bg = palette.diff_remove,
-		},
-		DiffChange = {
-			bg = palette.diff_change,
-		},
-		DiffText = {
-			bg = palette.diff_text,
-		},
-		diffAdded = {
-			fg = palette.green,
-		},
-		diffRemoved = {
-			fg = palette.red,
-		},
-		Folded = {
-			fg = palette.grey,
-			bg = palette.base3,
-		},
-		FoldColumn = {
-			fg = palette.white,
-			bg = palette.black,
-		},
+		WarningMsg = { fg = palette.yellow, style = 'bold' },
+		VertSplit = { fg = palette.brown },
+		LineNr = { fg = palette.base5, bg = palette.base0 },
+		SignColumn = { fg = palette.white, bg = palette.base2 },
+		SpellBad = { fg = palette.red, style = 'undercurl' },
+		SpellCap = { fg = palette.purple, style = 'undercurl' },
+		SpellRare = { fg = palette.aqua, style = 'undercurl' },
+		SpellLocal = { fg = palette.pink, style = 'undercurl' },
+		SpecialKey = { fg = palette.pink },
+		Title = { fg = palette.yellow, style = 'bold' },
+		-- Neo Tree --
+		Directory = { fg = palette.grey },
+
+		-- Git colors --
+		DiffAdd = { bg = palette.diff_add },
+		DiffDelete = { bg = palette.diff_remove },
+		DiffChange = { bg = palette.diff_change },
+		DiffText = { bg = palette.diff_text },
+		diffAdded = { fg = palette.green },
+		diffRemoved = { fg = palette.red },
+
+		Folded = { fg = palette.grey, bg = palette.base3 },
+		FoldColumn = { fg = palette.white, bg = palette.black },
+
+		-- Popups --
 		Pmenu = { fg = palette.white, bg = palette.base3 },
 		PmenuSel = { fg = palette.base4, bg = palette.orange },
 		PmenuSelBold = { fg = palette.base4, bg = palette.orange },
 		PmenuThumb = { fg = palette.purple, bg = palette.green },
 		PmenuSbar = { bg = palette.base3 },
-	}
-end
 
-M.load_plugin_syntax = function(palette)
-	return {
-		TSString = {
-			fg = palette.darkGreen,
-			style = 'italic'
-		},
-		TSInclude = {
-			fg = palette.aqua,
-			style = 'italic'
-		},
-		TSVariable = {
-			fg = palette.orange,
-		},
-		TSVariableBuiltin = {
-			fg = palette.orange,
-		},
-		TSAnnotation = {
-			fg = palette.darkGreen,
-			style = 'italic'
-		},
-		TSComment = {
-			fg = palette.base6,
-			style = 'italic',
-		},
-		TSConstant = {
-			fg = palette.purple,
-			style = 'bold'
-		},
-		TSConstBuiltin = {
-			fg = palette.purple,
-		},
-		TSConstMacro = {
-			fg = palette.purple,
-		},
-		TSConstructor = {
-			fg = palette.yellow,
-			style = 'bold'
-		},
-		TSConditional = {
-			fg = palette.aqua,
-			style = 'italic'
-		},
-		TSCharacter = {
-			fg = palette.darkGreen,
-			style = 'italic'
-		},
-		TSFunction = {
-			fg = palette.green,
-			style = 'bold',
-		},
-		TSFuncBuiltin = {
-			fg = palette.green,
-		},
-		TSFuncMacro = {
-			fg = palette.green,
-			style = 'italic',
-		},
-		TSKeyword = {
-			fg = palette.aqua,
-			style = 'italic',
-		},
-		TSKeywordFunction = {
-			fg = palette.yellow,
-			style = 'italic',
-		},
-		TSKeywordOperator = {
-			fg = palette.aqua,
-			style = 'italic'
-		},
-		TSKeywordReturn = {
-			fg = palette.aqua,
-			style = 'italic'
-		},
-		TSMethod = {
-			fg = palette.green,
-			style = 'bold'
-		},
-		TSNamespace = {
-			fg = palette.aqua,
-			style = 'italic'
-		},
-		TSNumber = {
-			fg = palette.purple,
-		},
-		TSOperator = {
-			fg = palette.yellow,
-			style = 'bold'
-		},
-		TSParameter = {
-			fg = palette.purple,
-		},
-		TSParameterReference = {
-			fg = palette.purple,
-		},
-		TSProperty = {
-			fg = palette.orange,
-		},
-		TSPunctDelimiter = {
-			fg = palette.yellow,
-			style = 'bold'
-		},
-		TSPunctBracket = {
-			fg = palette.brown,
-		},
-		TSPunctSpecial = {
-			fg = palette.yellow,
-		},
-		TSRepeat = {
-			fg = palette.aqua,
-			style = 'italic'
-		},
-		TSStringRegex = {
-			g = palette.purple,
-		},
-		TSStringEscape = {
-			fg = palette.purple,
-		},
-		TSTag = {
-			fg = palette.yellow,
-			style = 'bold'
-		},
-		TSTagDelimiter = {
-			fg = palette.brown,
-		},
-		TSTagAttribute = {
-			fg = palette.orange,
-		},
-		TSLabel = {
-			fg = palette.pink,
-		},
-		TSType = {
-			fg = palette.yellow,
-			style = 'bold'
-		},
-		TSException = {
-			fg = palette.aqua,
-			style = 'italic'
-		},
-		TSField = { fg = palette.white, style = 'italic' },
+		---- Treesitter ----
+		TSVariable = { fg = palette.orange },
+		TSVariableBuiltin = { fg = palette.orange, style = 'bold' },
+		TSConstant = { fg = palette.purple, style = 'bold' },
+		TSBoolean = { fg = palette.purple, style = 'bold' },
+		TSString = { fg = palette.darkGreen, style = 'italic' },
+		TSStringRegex = { g = palette.purple },
+		TSStringEscape = { fg = palette.purple },
+		TSCharacter = { fg = palette.darkGreen, style = 'italic' },
+		TSNumber = { fg = palette.purple },
 		TSFloat = { fg = palette.purple },
+		TSProperty = { fg = palette.orange },
+		TSConstBuiltin = { fg = palette.purple },
+		TSConstMacro = { fg = palette.purple },
+		TSConstructor = { fg = palette.yellow, style = 'bold' },
+		TSConditional = { fg = palette.aqua, style = 'italic' },
+		TSAnnotation = { fg = palette.darkGreen, style = 'italic' },
+		TSComment = { fg = palette.base6, style = 'italic' },
+
+		TSKeyword = { fg = palette.aqua, style = 'italic' },
+		TSKeywordFunction = { fg = palette.yellow, style = 'italic' },
+		TSKeywordOperator = { fg = palette.aqua, style = 'italic' },
+		TSKeywordReturn = { fg = palette.aqua, style = 'italic' },
+
+		TSInclude = { fg = palette.aqua, style = 'italic' },
+		TSNamespace = { fg = palette.aqua, style = 'italic' },
+		TSException = { fg = palette.aqua, style = 'italic' },
+
+		TSFunction = { fg = palette.green, style = 'bold' },
+		TSFuncBuiltin = { fg = palette.green },
+		TSFuncMacro = { fg = palette.green, style = 'italic' },
+		TSMethod = { fg = palette.green, style = 'bold' },
+		TSOperator = { fg = palette.yellow, style = 'bold' },
+		TSParameter = { fg = palette.purple },
+		TSParameterReference = { fg = palette.purple },
+
+		TSPunctDelimiter = { fg = palette.yellow, style = 'bold' },
+		TSPunctBracket = { fg = palette.brown },
+		TSPunctSpecial = { fg = palette.yellow },
+		TSRepeat = { fg = palette.aqua, style = 'italic' },
+
+		TSTag = { fg = palette.yellow, style = 'bold' },
+		TSTagDelimiter = { fg = palette.brown },
+		TSTagAttribute = { fg = palette.orange },
+		TSLabel = { fg = palette.pink },
+		TSType = { fg = palette.yellow, style = 'bold' },
+		TSField = { fg = palette.white, style = 'italic' },
 
 		dbui_tables = { fg = palette.white },
 
@@ -325,16 +177,6 @@ M.load_plugin_syntax = function(palette)
 	}
 end
 
-local function highlight(group, color)
-		local style = color.style and 'gui=' .. color.style or 'gui=NONE'
-		local fg = color.fg and 'guifg = ' .. color.fg or 'guifg = NONE'
-		local bg = color.bg and 'guibg = ' .. color.bg or 'guibg = NONE'
-		local sp = color.sp and 'guisp = ' .. color.sp or ''
-		vim.cmd(
-			'highlight ' .. group .. ' ' .. style .. ' ' .. fg .. ' ' .. bg .. ' ' .. sp
-		)
-end
-
 local default_config = {
 	palette = M.classic,
 	custom_hlgroups = {},
@@ -353,19 +195,16 @@ M.setup = function(config)
 	local used_palette = config.palette or M.classic
 	vim.g.colors_name = used_palette.name
 
-	local syntax = M.load_syntax(used_palette)
-	syntax = vim.tbl_deep_extend('keep', config.custom_hlgroups, syntax)
-	for group, colors in pairs(syntax) do
-		highlight(group, colors)
-	end
-	local plugin_syntax = M.load_plugin_syntax(used_palette)
-	plugin_syntax = vim.tbl_deep_extend(
-		'keep',
-		config.custom_hlgroups,
-		plugin_syntax
-	)
-	for group, colors in pairs(plugin_syntax) do
-		highlight(group, colors)
+	local theme = M.load_colors(used_palette)
+	theme = vim.tbl_deep_extend('keep', config.custom_hlgroups, theme)
+	for group, color in pairs(theme) do
+		local style = color.style and 'gui=' .. color.style or 'gui=NONE'
+		local fg = color.fg and 'guifg = ' .. color.fg or 'guifg = NONE'
+		local bg = color.bg and 'guibg = ' .. color.bg or 'guibg = NONE'
+		local sp = color.sp and 'guisp = ' .. color.sp or ''
+		vim.cmd(
+			'highlight ' .. group .. ' ' .. style .. ' ' .. fg .. ' ' .. bg .. ' ' .. sp
+		)
 	end
 end
 

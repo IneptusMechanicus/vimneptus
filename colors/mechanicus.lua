@@ -1,7 +1,7 @@
 local vim = vim
 local M = {}
 
-M.classic = {
+M.palette = {
 	name = 'mechanicus',
 	base0 = '#262622',
 	base1 = '#302F27',
@@ -61,6 +61,7 @@ M.load_colors = function(palette)
 		SpellLocal = { fg = palette.pink, style = 'undercurl' },
 		SpecialKey = { fg = palette.pink },
 		Title = { fg = palette.yellow, style = 'bold' },
+
 		-- Neo Tree --
 		Directory = { fg = palette.grey },
 
@@ -81,54 +82,6 @@ M.load_colors = function(palette)
 		PmenuSelBold = { fg = palette.base4, bg = palette.orange },
 		PmenuThumb = { fg = palette.purple, bg = palette.green },
 		PmenuSbar = { bg = palette.base3 },
-
-		---- Treesitter ----
-		TSVariable = { fg = palette.orange },
-		TSVariableBuiltin = { fg = palette.orange, style = 'bold' },
-		TSConstant = { fg = palette.purple, style = 'bold' },
-		TSBoolean = { fg = palette.purple, style = 'bold' },
-		TSString = { fg = palette.darkGreen, style = 'italic' },
-		TSStringRegex = { g = palette.purple },
-		TSStringEscape = { fg = palette.purple },
-		TSCharacter = { fg = palette.darkGreen, style = 'italic' },
-		TSNumber = { fg = palette.purple },
-		TSFloat = { fg = palette.purple },
-		TSProperty = { fg = palette.orange },
-		TSConstBuiltin = { fg = palette.purple },
-		TSConstMacro = { fg = palette.purple },
-		TSConstructor = { fg = palette.yellow, style = 'bold' },
-		TSConditional = { fg = palette.aqua, style = 'italic' },
-		TSAnnotation = { fg = palette.darkGreen, style = 'italic' },
-		TSComment = { fg = palette.base6, style = 'italic' },
-
-		TSKeyword = { fg = palette.aqua, style = 'italic' },
-		TSKeywordFunction = { fg = palette.yellow, style = 'italic' },
-		TSKeywordOperator = { fg = palette.aqua, style = 'italic' },
-		TSKeywordReturn = { fg = palette.aqua, style = 'italic' },
-
-		TSInclude = { fg = palette.aqua, style = 'italic' },
-		TSNamespace = { fg = palette.aqua, style = 'italic' },
-		TSException = { fg = palette.aqua, style = 'italic' },
-
-		TSFunction = { fg = palette.green, style = 'bold' },
-		TSFuncBuiltin = { fg = palette.green },
-		TSFuncMacro = { fg = palette.green, style = 'italic' },
-		TSMethod = { fg = palette.green, style = 'bold' },
-		TSOperator = { fg = palette.yellow, style = 'bold' },
-		TSParameter = { fg = palette.purple },
-		TSParameterReference = { fg = palette.purple },
-
-		TSPunctDelimiter = { fg = palette.yellow, style = 'bold' },
-		TSPunctBracket = { fg = palette.brown },
-		TSPunctSpecial = { fg = palette.yellow },
-		TSRepeat = { fg = palette.aqua, style = 'italic' },
-
-		TSTag = { fg = palette.yellow, style = 'bold' },
-		TSTagDelimiter = { fg = palette.brown },
-		TSTagAttribute = { fg = palette.orange },
-		TSLabel = { fg = palette.pink },
-		TSType = { fg = palette.yellow, style = 'bold' },
-		TSField = { fg = palette.white, style = 'italic' },
 
 		dbui_tables = { fg = palette.white },
 
@@ -177,6 +130,55 @@ M.load_colors = function(palette)
 	}
 end
 
+M.load_treesitter = function (palette)
+	return {
+		Variable = { name = '@variable', fg = palette.orange },
+		VarBuiltIn = {name = '@variable.builtin', fg = palette.orange },
+		Constant = { name = '@constant', fg = palette.purple, style = 'bold' },
+		Boolean = { name = '@boolean', fg = palette.purple, style = 'bold' },
+		String = { name = '@string', fg = palette.darkGreen, style = 'italic' },
+		StringEscape = { name = '@string.escape', fg = palette.purple },
+		Character = { name = '@character', fg = palette.darkGreen, style = 'italic' },
+		Number = { name = '@number', fg = palette.purple },
+		Float = { name = '@float', fg = palette.purple },
+		Property = { name = '@property', fg = palette.orange },
+		Const = { name = '@constant', fg = palette.aqua, style = 'bold' },
+		ConstBuiltin = { name = '@constant.builtin', fg = palette.purple, style = 'bold' },
+		-- ConstMacro = { fg = palette.purple },
+		Constructor = { name = '@constructor', fg = palette.yellow, style = 'bold' },
+		Conditional = { name = '@conditional', fg = palette.aqua, style = 'italic' },
+		Comment = { name = '@comment', fg = palette.base6, style = 'italic' },
+		--
+		Keyword = { name = '@keyword', fg = palette.aqua, style = 'italic' },
+		KeywordFunction = { name = '@keyword.function', fg = palette.yellow, style = 'italic' },
+		KeywordOperator = { name = '@keyword.operator', fg = palette.yellow, style = 'bold' },
+		--
+		Include = { name = '@include', fg = palette.aqua, style = 'italic' },
+		Namespace = { name = '@namespace', fg = palette.aqua, style = 'italic' },
+		Exception = { name = '@exception', fg = palette.aqua, style = 'italic' },
+		--
+		Function = { name = '@function', fg = palette.green, style = 'bold' },
+		FuncBuiltin = { name = '@function.builtin', fg = palette.green },
+		FuncMacro = { name = '@function.macro', fg = palette.green, style = 'italic' },
+		Method = { name = '@method', fg = palette.green, style = 'bold' },
+		Operator = { name = '@operator', fg = palette.yellow, style = 'bold' },
+		Parameter = { name = '@parameter',  fg = palette.purple },
+		ParameterRef = { name = '@reference',  fg = palette.purple },
+		--
+		PunctDelimiter = { name = '@punctuation.delimiter', fg = palette.yellow, style = 'bold' },
+		PunctBracket = { name = '@punctuation.bracket', fg = palette.brown, style = 'bold' },
+		PunctSpecial = { name = '@punctuation.special', fg = palette.brown },
+		Repeat = { name = '@repeat', fg = palette.aqua, style = 'italic' },
+		--
+		Tag = { name = '@tag', fg = palette.yellow, style = 'bold' },
+		TagDelimiter = { name = '@tag.delimiter', fg = palette.brown },
+		TagAttribute = { name = '@tag.attribute', fg = palette.orange },
+		Label = { name = '@label', fg = palette.pink },
+		Type = { name = '@type', fg = palette.yellow, style = 'bold' },
+		Field = { name = '@field', fg = palette.white, style = 'italic' },
+	}
+end
+
 local default_config = {
 	palette = M.classic,
 	custom_hlgroups = {},
@@ -192,18 +194,29 @@ M.setup = function(config)
 	vim.o.termguicolors = true
 	config = config or {}
 	config = vim.tbl_deep_extend('keep', config, default_config)
-	local used_palette = config.palette or M.classic
-	vim.g.colors_name = used_palette.name
+	vim.g.colors_name = M.palette.name
 
-	local theme = M.load_colors(used_palette)
+	local theme = M.load_colors(M.palette)
 	theme = vim.tbl_deep_extend('keep', config.custom_hlgroups, theme)
 	for group, color in pairs(theme) do
 		local style = color.style and 'gui=' .. color.style or 'gui=NONE'
 		local fg = color.fg and 'guifg = ' .. color.fg or 'guifg = NONE'
 		local bg = color.bg and 'guibg = ' .. color.bg or 'guibg = NONE'
-		local sp = color.sp and 'guisp = ' .. color.sp or ''
+		local sp = color.sp and 'guisp = ' .. color.sp or 'guisp = NONE'
 		vim.cmd(
 			'highlight ' .. group .. ' ' .. style .. ' ' .. fg .. ' ' .. bg .. ' ' .. sp
+		)
+	end
+
+	local TSTheme = M.load_treesitter(M.palette)
+	TSTheme = vim.tbl_deep_extend('keep', config.custom_hlgroups, TSTheme)
+	for group, color in pairs(TSTheme) do
+		local name = color.name or ''
+		local style = color.style and 'gui=' .. color.style or 'gui=NONE'
+		local fg = color.fg and 'guifg = ' .. color.fg or 'guifg = NONE'
+		local bg = color.bg and 'guibg = ' .. color.bg or 'guibg = NONE'
+		vim.cmd(
+			'highlight ' .. name .. ' ' .. style .. ' ' .. fg .. ' ' .. bg
 		)
 	end
 end

@@ -7,8 +7,8 @@ g.mapleader = ' '
 
 -- Main
 binding.set('n', '<leader>w', '<cmd>write<cr>')
-binding.set('n', '<leader>q','<cmd>Bdelete<cr>')
 binding.set('n', '<leader>a', ':keepjumps normal! ggVG<cr>')
+binding.set('n', '<leader>q','<cmd>Bdelete<cr>')
 binding.set('n', '<C-q>', '<cmd>qa<cr>')
 
 -- Clipboard hotkeys
@@ -21,16 +21,21 @@ binding.set('n', '<leader>e', '<cmd>Neotree toggle<cr>', {desc = "Toggle File Ex
 binding.set('n', '<leader>o', '<cmd>Neotree focus<cr>', {desc = "Focus File Explorere"})
 
 -- Tabline cycling --
-binding.set('n', '<S-l>', '<cmd>BufferLineCycleNext<cr>')
-binding.set('n', '<S-h>', '<cmd>BufferLineCyclePrev<cr>')
-
+binding.set('n', '<S-Right>', '<cmd>BufferLineCycleNext<cr>')
+binding.set('n', '<S-Left>', '<cmd>BufferLineCyclePrev<cr>')
 
 -- Comments --
 
 binding.set('n', '<C-/>', '<cmd>CommentToggle<cr>')
 binding.set({'v', 'x'}, '<C-/>', '<cmd>\'<,\'>CommentToggle<cr>')
 
+-- Moving lines --
 
+binding.set('n', '<C-Up>', 'ddkkp')
+binding.set('n', '<C-Down>', 'ddp')
+
+binding.set('x', '<C-Up>', 'dkkp')
+binding.set('x', '<C-Down>', 'dp')
 -- Trouble Toggle --
 
 binding.set('n', '<leader>t', '<cmd>TroubleToggle<cr>')

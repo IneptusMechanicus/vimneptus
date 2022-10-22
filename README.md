@@ -16,7 +16,7 @@ My personal neovim config, complete with colorscheme. I mostly maintain it for m
 * [Neovim 0.8+](https://github.com/neovim/neovim/releases/latest)
 * [Nerd Fonts](https://www.nerdfonts.com/font-downloads) - I personally use FiraCode for regular and bold and Code New Roman for italic (since FiraCode doesn't have italics)
 
-# Instalation
+# Installation
 
 Simply clone the repo into your nvim configuration folder.
 
@@ -25,3 +25,10 @@ git clone https://github.com/IneptusMechanicus/neovim-config.git .config/nvim
 ```
 Once the download is complete, simply run Neovim. The config is written so that it will install all necesarry plugins on first startup. The `alpha` dashborad won't appear until the next time you start neovim.
 
+
+# Plugins used
+* Basic UI and Layout
+  * [Bufferline](https://github.com/akinsho/bufferline.nvim) - Tabs for open buffers/files
+  * [Lualine](https://github.com/nvim-lualine/lualine.nvim) - Status line
+  * [NeoTree](https://github.com/nvim-neo-tree/neo-tree.nvim) - File tree explorer
+  * [Bufdelete](https://github.com/famiu/bufdelete.nvim) - Quitting individual buffers while maintaining the layout with NeoTree

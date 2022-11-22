@@ -43,8 +43,8 @@ require('packer').startup(function(use)
 	use {'ojroques/vim-oscyank'}
 	use {'famiu/bufdelete.nvim'}
 
-	-- Files and Tabs --
 	use {'akinsho/bufferline.nvim',
+	-- Files and Tabs --
 		requires = 'kyazdani42/nvim-web-devicons',
 		config = function() require('plugins.bufferline') end
 	}
@@ -111,6 +111,8 @@ require('packer').startup(function(use)
 	use {'hrsh7th/nvim-cmp',
 		config = function () require('plugins.cmp') end
 	}
+
+	use {'ThePrimeagen/harpoon'}
 
 	if install_plugins then
 		require('packer').sync()

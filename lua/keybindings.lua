@@ -31,3 +31,7 @@ binding.set('n', '<C-Down>', 'ddp')
 
 -- Trouble Toggle --
 binding.set('n', '<leader>t', '<cmd>TroubleToggle<cr>')
+
+-- Harpoon --
+binding.set('n', '<leader>h', function() require('harpoon.ui').toggle_quick_menu() end);
+binding.set('n', '<leader>m', function() require('harpoon.mark').add_file() end);

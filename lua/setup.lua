@@ -41,23 +41,6 @@ require('packer').startup(function(use)
 	-- Clipboard and popups utils --
 	use {'nvim-lua/popup.nvim'}
 	use {'ojroques/vim-oscyank'}
-	use {'famiu/bufdelete.nvim'}
-
-	use {'akinsho/bufferline.nvim',
-	-- Files and Tabs --
-		requires = 'kyazdani42/nvim-web-devicons',
-		config = function() require('plugins.bufferline') end
-	}
-
-	use {'nvim-neo-tree/neo-tree.nvim',
-		branch = 'v2.x',
-		requires = {
-			'nvim-lua/plenary.nvim',
-			'kyazdan/nvim-web-devicons',
-			'MunifTanjim/nui.nvim',
-		},
-		config = function() require('plugins.neotree') end
-	}
 
 	use {'nvim-lualine/lualine.nvim',
 		config = function() require('plugins.lualine') end

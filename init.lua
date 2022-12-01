@@ -1,3 +1,4 @@
+require('autocommands')
 require('options')
 require('keybindings')
 require('commands')

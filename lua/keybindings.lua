@@ -13,6 +13,10 @@ binding.set({'n', 'v', 'x'}, '<leader>c', '"+y')
 binding.set({'n', 'v', 'x'}, '<C-c>', '<cmd>OSCYank<cr>')
 binding.set({'n', 'x'}, '<leader>v', '"+p')
 
+-- File Manager --
+
+binding.set('n', '<leader>e', '<cmd>Explore<cr>')
+
 -- Tabline cycling --
 binding.set('n', '<S-Right>', '<cmd>bnext<cr>')
 binding.set('n', '<S-Left>', '<cmd>bprev<cr>')
@@ -29,5 +33,5 @@ binding.set('n', '<C-Down>', 'ddp')
 binding.set('n', '<leader>t', '<cmd>TroubleToggle<cr>')
 
 -- Harpoon --
-binding.set('n', '<leader>h', function() require('harpoon.ui').toggle_quick_menu() end);
-binding.set('n', '<leader>m', function() require('harpoon.mark').add_file() end);
+binding.set('n', '<leader>r', function() require('harpoon.ui').toggle_quick_menu() end);
+binding.set('n', '<leader>s', function() require('harpoon.mark').add_file() end);

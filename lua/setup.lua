@@ -95,7 +95,9 @@ require('packer').startup(function(use)
 		config = function () require('plugins.cmp') end
 	}
 
-	use {'ThePrimeagen/harpoon'}
+	use {'ThePrimeagen/harpoon',
+		requires = 'nvim-lua/plenary.nvim'
+	}
 
 	if install_plugins then
 		require('packer').sync()

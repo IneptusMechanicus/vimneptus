@@ -39,13 +39,12 @@ M.load_colors = function(palette)
 		NormalFloat = { bg = palette.base1 },
 		Cursor = { style = 'reverse' },
 		CursorColumn = { bg = palette.base3 },
-		CursorLine = { bg = palette.base3 },
+		CursorLine = { bg = palette.base0 },
 		NonText = { fg = palette.base5 },
 		Visual = { bg = palette.base4 },
 		VisualNOS = { bg = palette.base3 },
 		Search = { fg = palette.base2, bg = palette.yellow },
 		IncSearch = { fg = palette.base2, bg = palette.orange },
-		CursorLineNr = { fg = palette.orange, bg = palette.base2 },
 		MatchParen = { fg = palette.pink },
 		Question = { fg = palette.yellow },
 		ModeMsg = { fg = palette.white, style = 'bold' },
@@ -54,6 +53,7 @@ M.load_colors = function(palette)
 		WarningMsg = { fg = palette.yellow, style = 'bold' },
 		VertSplit = { fg = palette.brown },
 		LineNr = { fg = palette.base5, bg = palette.base0 },
+		CursorLineNr = { fg = palette.base7, bg = palette.base1 },
 		SignColumn = { fg = palette.white, bg = palette.base2 },
 		SpellBad = { fg = palette.red, style = 'undercurl' },
 		SpellCap = { fg = palette.purple, style = 'undercurl' },
@@ -127,6 +127,12 @@ M.load_colors = function(palette)
 		CmpItemKindTypeParameter = { fg = palette.green },
 		CmpItemKindEnumMember = { fg = palette.green },
 		CmpItemKindOperator = { fg = palette.green },
+
+		-- WhichKey
+		WhichKey = {fg = palette.green, style = 'bold'},
+		WhichKeyGroup = {fg = palette.orange, style = 'italic'},
+		WhichKeySeparator = {fg = palette.yellow, style = 'bold'},
+		WhichKeyDesc = {fg = palette.aqua, style = 'italic'},
 	}
 end
 
@@ -144,7 +150,6 @@ M.load_treesitter = function (palette)
 		Property = { name = '@property', fg = palette.orange },
 		Const = { name = '@constant', fg = palette.aqua, style = 'bold' },
 		ConstBuiltin = { name = '@constant.builtin', fg = palette.purple, style = 'bold' },
-		-- ConstMacro = { fg = palette.purple },
 		Constructor = { name = '@constructor', fg = palette.yellow, style = 'bold' },
 		Conditional = { name = '@conditional', fg = palette.aqua, style = 'italic' },
 		Comment = { name = '@comment', fg = palette.base6, style = 'italic' },
@@ -156,6 +161,7 @@ M.load_treesitter = function (palette)
 		Include = { name = '@include', fg = palette.aqua, style = 'italic' },
 		Namespace = { name = '@namespace', fg = palette.aqua, style = 'italic' },
 		Exception = { name = '@exception', fg = palette.aqua, style = 'italic' },
+		StorageClass = { name = '@storageclass', fg = palette.yellow, style = 'italic' },
 		--
 		Function = { name = '@function', fg = palette.green, style = 'bold' },
 		FuncBuiltin = { name = '@function.builtin', fg = palette.green },
@@ -175,6 +181,8 @@ M.load_treesitter = function (palette)
 		TagAttribute = { name = '@tag.attribute', fg = palette.orange },
 		Label = { name = '@label', fg = palette.pink },
 		Type = { name = '@type', fg = palette.yellow, style = 'bold' },
+		TypeQualifier = { name = '@type.qualifier', fg = palette.aqua, style = 'italic' },
+		TypeDefinition = { name = '@type.definition', fg = palette.green, style = 'bold' },
 		Field = { name = '@field', fg = palette.white, style = 'italic' },
 	}
 end

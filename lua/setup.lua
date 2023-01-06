@@ -7,8 +7,7 @@ local install_plugins = false
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	print('Installing packer...')
-	local packer_url = 'https://github.com/wbthomason/packer.nvim'
-	vim.fn.system({'git', 'clone', '--depth', '1', packer_url, install_path})
+	vim.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 	print('Done.')
 
 	vim.cmd('packadd packer.nvim')
@@ -32,7 +31,7 @@ require('packer').startup({
 			},
 		}
 
-		-- Start Screen --
+		-- UI Stuff --
 		use {'goolord/alpha-nvim',
 			requires = 'kyazdani42/nvim-web-devicons',
 			config = function() require('plugins.alpha') end
@@ -56,11 +55,6 @@ require('packer').startup({
 
 		use {'windwp/nvim-autopairs',
 			config = function() require('plugins.autopairs') end
-		}
-
-		use {'folke/trouble.nvim',
-			requires = 'kyazdani42/nvim-web-devicons',
-			config = function() require('plugins.trouble') end
 		}
 
 		-- Syntax and hex colours

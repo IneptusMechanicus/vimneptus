@@ -14,7 +14,6 @@ bindings.set({'n', 'v', 'x'}, '<leader>v', '"+p')
 bindings.set({'n', 'v', 'x'}, '<C-c>', '<cmd>OSCYank<cr>')
 
 -- File Manager --
-
 bindings.set('n', '<leader>e', '<cmd>Telescope file_browser<cr>')
 
 -- Tabline cycling --
@@ -29,9 +28,6 @@ bindings.set({'v', 'x'}, '<C-/>', '<cmd>\'<,\'>CommentToggle<cr>')
 bindings.set('n', '<C-Up>', 'ddkkp')
 bindings.set('n', '<C-Down>', 'ddp')
 
--- Trouble Toggle --
-bindings.set('n', '<leader>t', '<cmd>TroubleToggle<cr>')
-
 -- Harpoon --
-bindings.set('n', '<leader>r', function() require('harpoon.ui').toggle_quick_menu() end);
-bindings.set('n', '<leader>s', function() require('harpoon.mark').add_file() end);
+bindings.set('n', '<leader>ht', function() require('harpoon.ui').toggle_quick_menu() end);
+bindings.set('n', '<leader>hm', function() require('harpoon.mark').add_file() end);

@@ -38,8 +38,6 @@ M.load_colors = function(palette)
 		Normal = { fg = palette.white, bg = palette.base2 },
 		NormalFloat = { bg = palette.base1 },
 		Cursor = { style = 'reverse' },
-		CursorColumn = { bg = palette.base3 },
-		CursorLine = { bg = palette.base0 },
 		NonText = { fg = palette.base5 },
 		Visual = { bg = palette.base4 },
 		VisualNOS = { bg = palette.base3 },
@@ -52,18 +50,18 @@ M.load_colors = function(palette)
 		ErrorMsg = { fg = palette.red, style = 'bold' },
 		WarningMsg = { fg = palette.yellow, style = 'bold' },
 		VertSplit = { fg = palette.brown },
-		LineNr = { fg = palette.base5, bg = palette.base0 },
 		CursorLineNr = { fg = palette.base7, bg = palette.base1 },
-		SignColumn = { fg = palette.white, bg = palette.base2 },
+		LineNr = { fg = palette.base5, bg = palette.base0 },
+		SignColumn = { fg = palette.yellow, bg = palette.base2 },
 		SpellBad = { fg = palette.red, style = 'undercurl' },
 		SpellCap = { fg = palette.purple, style = 'undercurl' },
 		SpellRare = { fg = palette.aqua, style = 'undercurl' },
 		SpellLocal = { fg = palette.pink, style = 'undercurl' },
 		SpecialKey = { fg = palette.pink },
+		Special = { fg = palette.yellow },
 		Title = { fg = palette.yellow, style = 'bold' },
+		Identifier = { fg = palette.aqua, style = 'bold' },
 
-		-- Neo Tree --
-		Directory = { fg = palette.grey },
 
 		-- Git colors --
 		DiffAdd = { bg = palette.diff_add },
@@ -78,10 +76,11 @@ M.load_colors = function(palette)
 
 		-- Popups --
 		Pmenu = { fg = palette.white, bg = palette.base3 },
-		PmenuSel = { fg = palette.base4, bg = palette.orange },
+		PmenuSel = { fg = palette.base4, bg = palette.white },
 		PmenuSelBold = { fg = palette.base4, bg = palette.orange },
 		PmenuThumb = { fg = palette.purple, bg = palette.green },
 		PmenuSbar = { bg = palette.base3 },
+		String = { fg = palette.green, style = 'italic' },
 
 		dbui_tables = { fg = palette.white },
 
@@ -168,6 +167,7 @@ M.load_treesitter = function (palette)
 		FuncMacro = { name = '@function.macro', fg = palette.green, style = 'italic' },
 		Method = { name = '@method', fg = palette.green, style = 'bold' },
 		Operator = { name = '@operator', fg = palette.yellow, style = 'bold' },
+		ConditionalTernary = { name = '@conditional.ternary', fg = palette.yellow, style = 'italic' },
 		Parameter = { name = '@parameter',  fg = palette.purple },
 		ParameterRef = { name = '@reference',  fg = palette.purple },
 		--

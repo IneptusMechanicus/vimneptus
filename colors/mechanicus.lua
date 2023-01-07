@@ -132,6 +132,23 @@ M.load_colors = function(palette)
 		WhichKeyGroup = {fg = palette.orange, style = 'italic'},
 		WhichKeySeparator = {fg = palette.yellow, style = 'bold'},
 		WhichKeyDesc = {fg = palette.aqua, style = 'italic'},
+
+		-- Telescope --
+		TelescopeBorder = { fg = palette.green },
+		TelescopePreviewRead = { fg = palette.darkGreen},
+		TelescopePreviewWrite = { fg = palette.aqua },
+		TelescopePreviewExecute = { fg = palette.white, style = 'bold' },
+		TelescopePreviewDirectory = { fg = palette.base7, style = 'italic' },
+		TelescopePreviewSize = { fg = palette.purple, style = 'italic' },
+		TelescopePreviewUser = { fg = palette.darkGreen, style = 'italic' },
+		TelescopePreviewGroup = { fg = palette.green, style = 'italic' },
+		TelescopePreviewDate = { fg = palette.base6, style = 'italic' },
+		TelescopePreviewTitle = { fg = palette.yellow, style = 'bold' },
+		TelescopePrompt = { fg = palette.aqua },
+		TelescopePromptBorder = { fg = palette.orange },
+		TelescopePromptTitle = { fg = palette.yellow, style = 'bold' },
+		TelescopeResultsTitle = { fg = palette.yellow, style = 'bold' },
+		TelescopeResultsBorder = { fg = palette.aqua },
 	}
 end
 

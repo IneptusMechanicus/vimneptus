@@ -91,12 +91,11 @@ require('packer').startup({
 		}
 
 		use {'nvim-telescope/telescope.nvim',
-			requires = 'nvim-lua/plenary.nvim',
+			requires = {
+				'nvim-lua/plenary.nvim',
+				'nvim-telescope/telescope-file-browser.nvim'
+			},
 			config = function() require('plugins.telescope') end
-		}
-
-		use {'nvim-telescope/telescope-file-browser.nvim',
-			config = function () require('plugins.telescope-file-browser') end
 		}
 
 		if install_plugins then

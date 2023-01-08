@@ -8,6 +8,7 @@ vim.opt.list = true
 vim.opt.lazyredraw = true
 vim.opt.wrap = false
 vim.opt.clipboard = 'unnamedplus'
+vim.opt.showmode = false
 
 -- .2 Search --
 vim.opt.ignorecase = true

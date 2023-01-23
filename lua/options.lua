@@ -15,23 +15,22 @@ vim.opt.smartcase = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-
 -- 3. Indents --
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+vim.opt.expandtab = false
 vim.opt.smartindent = true
 
 -- 4. Special characters
 vim.opt.fillchars='eob: '
-vim.opt.listchars='tab:| ,trail:*,eol:¬'
+vim.opt.list = true
+vim.opt.listchars='tab:| ,trail:·,eol:¬,space:·'
 
 -- 5. Scrolling --
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
-
 
 -- 6. UndoTree --
 vim.opt.swapfile = false

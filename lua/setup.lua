@@ -41,6 +41,9 @@ require('packer').startup({
 			config = function() require('plugins.whichkey') end
 		}
 
+		-- Color scheme --
+		use {'IneptusMechanicus/mechanicus.nvim'}
+
 		-- Clipboard and popups utils --
 		use {'ojroques/vim-oscyank'}
 

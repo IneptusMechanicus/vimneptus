@@ -9,9 +9,12 @@ bindings.set('n', '<leader>a', ':keepjumps normal! ggVG<cr>')
 bindings.set('n', '<C-q>', '<cmd>qa<cr>')
 
 -- Clipboard hotkeys
-bindings.set({'n', 'v', 'x'}, '<leader>c', '"+y')
-bindings.set({'n', 'v', 'x'}, '<leader>v', '"+p')
-bindings.set({'n', 'v', 'x'}, '<C-c>', '<cmd>OSCYank<cr>')
+bindings.set("x", "<leader>p", [["_dP]])
+
+-- next greatest remap ever : asbjornHaland
+bindings.set({"n", "v"}, "<leader>y", [["+y]])
+bindings.set("n", "<leader>Y", [["+Y]])
+bindings.set({"n", "v"}, "<leader>d", [["_d]])
 
 -- File Manager --
 bindings.set('n', '<leader>e', '<cmd>Telescope file_browser<cr>')
@@ -20,13 +23,9 @@ bindings.set('n', '<leader>e', '<cmd>Telescope file_browser<cr>')
 bindings.set('n', '<S-Right>', '<cmd>bnext<cr>')
 bindings.set('n', '<S-Left>', '<cmd>bprev<cr>')
 
--- Comments --
-bindings.set('n', '<C-/>', '<cmd>CommentToggle<cr>')
-bindings.set({'v', 'x'}, '<C-/>', '<cmd>\'<,\'>CommentToggle<cr>')
-
 -- Moving lines --
-bindings.set('n', '<C-Up>', 'ddkkp')
-bindings.set('n', '<C-Down>', 'ddp')
+bindings.set('v', '<S-Up>', ":m '<-2<CR>gv=gv")
+bindings.set('v', '<S-Down>', ":m '>+1<CR>gv=gv")
 
 -- Harpoon --
 bindings.set('n', '<leader>ht', function() require('harpoon.ui').toggle_quick_menu() end);

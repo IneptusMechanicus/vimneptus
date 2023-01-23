@@ -1,28 +1,40 @@
 local vim = vim
 
 -- .1 General --
-vim.opt.number = true
-vim.opt.numberwidth = 5
+vim.opt.nu = true
+vim.opt.relativenumber = true
 vim.opt.mouse = 'a'
-vim.opt.list = true
-vim.opt.lazyredraw = true
 vim.opt.wrap = false
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.showmode = false
+vim.opt.termguicolors = true
 
 -- .2 Search --
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.hlsearch = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 
--- .3 Tabs, Spaces, Newlines --
+
+-- 3. Indents --
 vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.expandtab = false
-vim.opt.autoindent = true
-vim.opt.autoread = true
-vim.opt.relativenumber = true
+vim.opt.expandtab = true
+vim.opt.smartindent = true
 
 -- 4. Special characters
 vim.opt.fillchars='eob: '
 vim.opt.listchars='tab:| ,trail:*,eol:¬'
+
+-- 5. Scrolling --
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+vim.opt.isfname:append("@-@")
+
+
+-- 6. UndoTree --
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true

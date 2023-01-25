@@ -1,7 +1,6 @@
 local vim = vim
 
 -- .1 General --
-vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.mouse = 'a'
 vim.opt.wrap = false

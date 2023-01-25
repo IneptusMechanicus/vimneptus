@@ -13,7 +13,7 @@ bindings.set("x", "<leader>p", [["_dP]])
 
 bindings.set({"n", "v"}, "<leader>y", [["+y]])
 bindings.set("n", "<leader>Y", [["+Y]])
-bindings.set({"n", "v"}, "<leader>d", [["_d]])
+bindings.set({"n", "v"}, "x", [["_d]])
 bindings.set("x", "<leader>p", [["_dP]])
 
 bindings.set("n", "<C-d>", "<C-d>zz")

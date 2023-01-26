@@ -8,13 +8,17 @@ My personal neovim config, complete with colorscheme. I mostly maintain it for m
 
 ---
 
-![img1](https://user-images.githubusercontent.com/8884770/196778195-20b6ca0d-a95c-4882-86c5-30d444927b2c.png)
-![img2](https://user-images.githubusercontent.com/8884770/196778193-b9355648-ab9f-43d4-9c33-aebe20cb9b40.png)
-![img3](https://user-images.githubusercontent.com/8884770/196778190-7dba637e-7c32-4ada-9eb9-a1e9a3427058.png)
+![img1](img/1.png)
+![img2](img/2.png)
+
+---
 
 # Requirements 
-* [Neovim 0.8+](https://github.com/neovim/neovim/releases/latest)
+* [Neovim](https://github.com/neovim/neovim/releases/latest) - The latest stable version
 * [Nerd Fonts](https://www.nerdfonts.com/font-downloads) - I personally use FiraCode for regular and bold and Code New Roman for italic (since FiraCode doesn't have italics)
+* [ripgrep](https://github.com/BurntSushi/ripgrep) - Telescope uses ripgrep as a dependency. For Linux, it should be present in the default package repos.
+
+---
 
 # Installation
 
@@ -23,12 +27,25 @@ Simply clone the repo into your nvim configuration folder.
 ```
 git clone https://github.com/IneptusMechanicus/neovim-config.git .config/nvim
 ```
-Once the download is complete, simply run Neovim. The config is written so that it will install all necesarry plugins on first startup. The `alpha` dashborad won't appear until the next time you start neovim.
+Once the download is complete, simply run Neovim. The config is written so that it will install all necesarry plugins on first startup. The `alpha` dashboard won't appear until the next time you start neovim.
 
+---
 
 # Plugins used
+* Package Manager
+  * [Lazy.nvim](https://github.com/folke/lazy.nvim)
 * Basic UI and Layout
-  * [Bufferline](https://github.com/akinsho/bufferline.nvim) - Tabs for open buffers/files
+  * [Alpha](https://github.com/goolord/alpha-nvim) - Welcome Screen
   * [Lualine](https://github.com/nvim-lualine/lualine.nvim) - Status line
-  * [NeoTree](https://github.com/nvim-neo-tree/neo-tree.nvim) - File tree explorer
-  * [Bufdelete](https://github.com/famiu/bufdelete.nvim) - Quitting individual buffers while maintaining the layout with NeoTree
+  * [WhichKey](https://github.com/folke/which-key.nvm) - Status line
+  * [Color Scheme](https://github.com/IneptusMechanicus/mechanicus.nvim) - Status line
+  * [Colorizer](https://github.com/NvChad/nvim-colorizer.lua) - Colorize hex values
+* File Management
+  * [Telescope](https://github.com/nvim-telescope/telescope.nvim) - Fuzzy Finder
+  * [Telescope File Browser](https://github.com/nvim-telescope/telescope-file-browser.nvim) - File Browser
+  * [Harpoon](https://github.com/ThePrimeagen/harpoon) - File Quicklist
+* Coding stuff
+  * [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Syntax Highlighting
+  * [LSP Zero](https://github.com/VonHeikemen/lsp-zero.nvim) - Easy LSP setup
+  * [Nvim Comment](https://github.com/terrortylor/nvim-comment) - Hotkey commenting
+  * [Autopairs](https://github.com/windwp/nvim-autopairs) - Automatic parentheses

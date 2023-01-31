@@ -1,5 +1,6 @@
 local vim = vim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -10,6 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 require('mechanicus.options')
@@ -19,5 +21,5 @@ require('mechanicus.lazy')
 
 local install_path = vim.fn.stdpath('data') .. '/lazy/mechanicus.nvim'
 if vim.fn.empty(vim.fn.glob(install_path)) <= 0 then
-	vim.cmd.colorscheme("mechanicus")
+  vim.cmd.colorscheme("mechanicus")
 end

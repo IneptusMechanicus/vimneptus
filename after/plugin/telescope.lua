@@ -5,17 +5,17 @@ local telescope_ok, telescope = pcall(require, 'telescope')
 if not telescope_ok then return end
 
 telescope.setup({
-	defaults = {
-		layout_config = {
-			prompt_position = 'top'
-		},
-		sorting_strategy = 'ascending'
-	},
-	extensions = {
-		file_browser = {
-			hijack_netrw = true,
-		},
-	}
+  defaults = {
+    layout_config = {
+      prompt_position = 'top'
+    },
+    sorting_strategy = 'ascending'
+  },
+  extensions = {
+    file_browser = {
+      hijack_netrw = true,
+    },
+  }
 })
 
 telescope.load_extension "file_browser"

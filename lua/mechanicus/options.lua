@@ -2,6 +2,7 @@ local vim = vim
 
 -- .1 General --
 vim.opt.relativenumber = true
+vim.opt.number = true
 vim.opt.mouse = 'a'
 vim.opt.wrap = false
 vim.opt.clipboard = 'unnamedplus'

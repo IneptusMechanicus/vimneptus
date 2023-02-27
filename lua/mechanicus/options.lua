@@ -8,6 +8,7 @@ vim.opt.wrap = false
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.showmode = false
 vim.opt.termguicolors = true
+vim.opt.cursorline = true
 
 -- .2 Search --
 vim.opt.ignorecase = true

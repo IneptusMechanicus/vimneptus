@@ -12,8 +12,9 @@ wk.register({
   t = {
     name = "Telescope",
     b = "Buffers",
-    f = "Find Files",
-    g = "Live Grep",
+    f = "Find All Files",
+    g = "Git Files",
+    r = "Live Grep",
     h = "Help"
   },
   h = {

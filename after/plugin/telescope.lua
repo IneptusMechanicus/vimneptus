@@ -9,7 +9,10 @@ telescope.setup({
     layout_config = {
       prompt_position = 'top'
     },
-    sorting_strategy = 'ascending'
+    sorting_strategy = 'ascending',
+    file_ignore_patterns = {
+      "node_modules"
+    }
   },
   extensions = {
     file_browser = {
@@ -20,7 +23,10 @@ telescope.setup({
 
 telescope.load_extension "file_browser"
 
-vim.keymap.set('n', '<leader>tf', builtin.find_files, {})
-vim.keymap.set('n', '<leader>tg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>tf', function ()
+  builtin.find_files({no_ignore = true}) 
+end, {})
+vim.keymap.set('n', '<leader>tg', builtin.git_files, {})
+vim.keymap.set('n', '<leader>tr', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>tb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>th', builtin.help_tags, {})

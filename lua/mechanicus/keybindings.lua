@@ -37,3 +37,6 @@ bindings.set('v', '<S-Down>', ":m '>+1<CR>gv=gv")
 -- Harpoon --
 bindings.set('n', '<leader>ht', function() require('harpoon.ui').toggle_quick_menu() end);
 bindings.set('n', '<leader>hm', function() require('harpoon.mark').add_file() end);
+
+-- Treesitter --
+bindings.set('n', '<leader>gt', '<cmd>TSHighlightCapturesUnderCursor<cr>')

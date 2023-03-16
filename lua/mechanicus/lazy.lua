@@ -2,8 +2,12 @@ require('lazy').setup({
   -- UI Stuff --
   {'goolord/alpha-nvim', dependencies = 'kyazdani42/nvim-web-devicons'},
   {'folke/which-key.nvim'},
-  {'akinsho/toggleterm.nvim'},
-
+  {'folke/noice.nvim',
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
+  },
   -- Color scheme --
   {'IneptusMechanicus/mechanicus.nvim'},
 
@@ -17,6 +21,7 @@ require('lazy').setup({
   -- Syntax and hex colours
   {'NvChad/nvim-colorizer.lua'},
   {'nvim-treesitter/nvim-treesitter'},
+  {'nvim-treesitter/playground'},
 
   -- LSP and Autocompletion
   {'VonHeikemen/lsp-zero.nvim',

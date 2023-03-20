@@ -1,10 +1,40 @@
 local status_ok, lualine = pcall(require, 'lualine')
 if not status_ok then return end
 
+local palette = {
+  white = '#e6c68a',
+  black = '#000000',
+  yellow = '#e6f074',
+  green = '#88c288',
+  blue = '#7abcf5',
+  base1 = '#302f27',
+}
+
 lualine.setup({
   options = {
     icons_enabled = true,
-    theme = 'auto',
+    theme = {
+      normal = {
+        a = {bg = palette.white, fg = palette.black, gui = 'bold'},
+        b = {bg = palette.base1, fg = palette.white},
+        c = {bg = palette.black, fg = palette.white}
+      },
+      insert = {
+        a = {bg = palette.green, fg = palette.black, gui = 'bold'},
+        b = {bg = palette.base1, fg = palette.white},
+        c = {bg = palette.black, fg = palette.white}
+      },
+      visual = {
+        a = {bg = palette.yellow, fg = palette.black, gui = 'bold'},
+        b = {bg = palette.base1, fg = palette.white},
+        c = {bg = palette.black, fg = palette.white}
+      },
+      command = {
+        a = {bg = palette.blue, fg = palette.black, gui = 'bold'},
+        b = {bg = palette.base1, fg = palette.white},
+        c = {bg = palette.black, fg = palette.white}
+      }
+    },
     component_separators = '|',
     section_separators = ' ',
     disabled_filetypes = {'packer'}

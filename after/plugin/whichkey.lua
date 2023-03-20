@@ -23,3 +23,12 @@ wk.register({
     t = "Toggle UI",
   }
 }, { prefix = "<leader>" })
+
+wk.register({
+  g = {
+    d = "Go To Definntion",
+    D = "Go To Declaration",
+    r = "List References",
+    l = "Show Diagnostic Popup Under Cursor",
+  },
+})

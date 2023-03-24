@@ -9,7 +9,7 @@ require('lazy').setup({
     }
   },
   -- Color scheme --
-  {'IneptusMechanicus/mechanicus.nvim'},
+  {dir = '~/nvim-plugins/mechanicus.nvim'},
 
   -- Clipboard and popups utils --
   {'nvim-lualine/lualine.nvim'},
@@ -50,4 +50,10 @@ require('lazy').setup({
       'nvim-telescope/telescope-file-browser.nvim'
     },
   },
+  {
+    dir = '~/nvim-plugins/devnotes.nvim',
+    dependencies = {
+      {'kkharji/sqlite.lua'}
+    }
+  }
 })

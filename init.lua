@@ -19,7 +19,7 @@ require('mechanicus.keybindings')
 require('mechanicus.autocmd')
 require('mechanicus.lazy')
 
-local install_path = vim.fn.stdpath('data') .. '/lazy/mechanicus.nvim'
+local install_path = '~/nvim-plugins/mechanicus.nvim'
 if vim.fn.empty(vim.fn.glob(install_path)) <= 0 then
   vim.cmd.colorscheme("mechanicus")
 end

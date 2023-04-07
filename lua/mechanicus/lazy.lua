@@ -1,27 +1,6 @@
-require('lazy').setup({
-  -- UI Stuff --
-  {'goolord/alpha-nvim',
-    dependencies = {
-      'kyazdani42/nvim-web-devicons'
-    }
-  },
-  {'folke/which-key.nvim'},
-  {'folke/noice.nvim',
-    dependencies = {
-      'MunifTanjim/nui.nvim',
-      'rcarriga/nvim-notify',
-    }
-  },
-  -- Color scheme --
-  {dir = '~/nvim-plugins/mechanicus.nvim'},
+require('lazy').setup("plugins")
 
-  -- Clipboard and popups utils --
-  {'nvim-lualine/lualine.nvim'},
-
-  -- Coding quick commands --
-  {'terrortylor/nvim-comment'},
-  {'windwp/nvim-autopairs'},
-
+{
   -- Syntax and hex colours
   {'NvChad/nvim-colorizer.lua'},
   {'nvim-treesitter/nvim-treesitter'},

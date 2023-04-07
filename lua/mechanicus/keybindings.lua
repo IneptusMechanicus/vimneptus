@@ -9,8 +9,6 @@ bindings.set('n', '<leader>a', ':keepjumps normal! ggVG<cr>')
 bindings.set('n', '<C-q>', '<cmd>qa<cr>')
 
 -- Clipboard hotkeys
-bindings.set("x", "<leader>p", [["_dP]])
-
 bindings.set({"n", "v"}, "<leader>y", [["+y]])
 bindings.set("n", "<leader>Y", [["+Y]])
 bindings.set({"n", "v"}, "x", [["_d]])
@@ -19,9 +17,6 @@ bindings.set("x", "<leader>p", [["_dP]])
 -- Vertical movements
 bindings.set("n", "<C-d>", "<C-d>zz")
 bindings.set("n", "<C-u>", "<C-u>zz")
-
-bindings.set("n", "<C-t>", "<cmd>ToggleTerm<cr>")
-bindings.set("t", "<C-t>", "<cmd>ToggleTerm<cr>")
 
 -- File Manager --
 bindings.set('n', '<leader>e', '<cmd>Telescope file_browser<cr>')

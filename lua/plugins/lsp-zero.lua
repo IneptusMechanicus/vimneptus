@@ -16,7 +16,7 @@ return {'VonHeikemen/lsp-zero.nvim',
     },
     config = function()
       local vim = vim
-      local lsp = require('ksp-zero')
+      local lsp = require('lsp-zero')
       lsp.preset('recommended')
       lsp.on_attach(function(client, bufnr)
         vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, {buffer = bufnr})

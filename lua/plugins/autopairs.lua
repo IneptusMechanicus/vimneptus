@@ -1,4 +1,4 @@
 return {
   'windwp/nvim-autopairs',
-  config = require('nvim-autopairs').setup()
+  config = require('nvim_autopairs').setup()
 }

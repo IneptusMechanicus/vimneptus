@@ -1,1 +1,4 @@
-return {'terrortylor/nvim-comment'}
+return {
+  'terrortylor/nvim-comment',
+  config = require('nvim_comment').setup()
+}

@@ -1,13 +1,13 @@
 local vim = vim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
     lazypath,
   })
 end
@@ -18,9 +18,9 @@ require('mechanicus.options')
 require('mechanicus.keybindings')
 require('mechanicus.commands')
 require('mechanicus.autocmd')
-require('mechanicus.lazy')
+require('lazy').setup('plugins')
 
 local install_path = '~/nvim-plugins/mechanicus.nvim'
 if vim.fn.empty(vim.fn.glob(install_path)) <= 0 then
-  vim.cmd.colorscheme("mechanicus")
+  vim.cmd.colorscheme('mechanicus')
 end

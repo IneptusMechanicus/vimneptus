@@ -5,12 +5,12 @@ return {
     'rcarriga/nvim-notify',
   },
   config = function()
-    require("noice").setup({
+    require('noice').setup({
       lsp = {
         override = {
-          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-          ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true,
+          ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
+          ['vim.lsp.util.stylize_markdown'] = true,
+          ['cmp.entry.get_documentation'] = true,
         },
       },
       presets = {
@@ -23,38 +23,38 @@ return {
       views = {
         cmdline_popup = {
           position = {
-            row = "95%",
-            col = "100%",
+            row = '95%',
+            col = '100%',
           },
           size = {
             width = 60,
-            height = "auto",
+            height = 'auto',
           },
         },
         popupmenu = {
-          relative = "editor",
+          relative = 'editor',
          position = {
-            row = "80%",
-            col = "100%",
+            row = '80%',
+            col = '100%',
           },
           size = {
             width = 60,
             height = 10,
           },
           border = {
-            style = "rounded",
+            style = 'rounded',
             padding = { 0, 1 },
           },
           win_options = {
-            winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
+            winhighlight = { Normal = 'Normal', FloatBorder = 'DiagnosticInfo' },
           },
         },
       },
       routes = {
         {
           filter = {
-            kind = "",
-            find = "invalid node type at position 2765",
+            kind = '',
+            find = 'invalid node type at position 2765',
           },
           opts = { skip = true },
         },

@@ -5,9 +5,11 @@ return {'VonHeikemen/lsp-zero.nvim',
       'neovim/nvim-lspconfig',
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
+      -- Autocompletion
       'hrsh7th/nvim-cmp',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
+      -- Snippets
       'saadparwaiz1/cmp_luasnip',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-nvim-lua',
@@ -19,16 +21,17 @@ return {'VonHeikemen/lsp-zero.nvim',
       local lsp = require('lsp-zero')
       lsp.preset('recommended')
       lsp.on_attach(function(client, bufnr)
-        vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, {buffer = bufnr})
-        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {buffer = bufnr})
-        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {buffer = bufnr})
-        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {buffer = bufnr})
-        vim.keymap.set('n', 'gl', vim.diagnostic.open_float, {buffer = bufnr})
-        vim.keymap.set('n', 'gr', vim.lsp.buf.references, {buffer = bufnr})
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover, {buffer = bufnr})
-        vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, {buffer = bufnr})
-        vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, {buffer = bufnr})
-        vim.keymap.set('n', ']d', vim.diagnostic.goto_next, {buffer = bufnr})
+        client.server_capabilities.semanticTokensProvider = nil
+        vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, {buffer = bufnr})
+        vim.keymap.set('n', '<leader>lc', vim.lsp.buf.declaration, {buffer = bufnr})
+        vim.keymap.set('n', '<leader>lf', vim.lsp.buf.definition, {buffer = bufnr})
+        vim.keymap.set('n', '<leader>li', vim.lsp.buf.implementation, {buffer = bufnr})
+        vim.keymap.set('n', '<leader>ll', vim.diagnostic.open_float, {buffer = bufnr})
+        vim.keymap.set('n', '<leader>lr', vim.lsp.buf.references, {buffer = bufnr})
+        vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover, {buffer = bufnr})
+        vim.keymap.set('n', '<leader>ls', vim.lsp.buf.signature_help, {buffer = bufnr})
+        vim.keymap.set('n', '<leader>l[', vim.diagnostic.goto_prev, {buffer = bufnr})
+        vim.keymap.set('n', '<ledrer>l]', vim.diagnostic.goto_next, {buffer = bufnr})
       end)
       lsp.setup()
     end

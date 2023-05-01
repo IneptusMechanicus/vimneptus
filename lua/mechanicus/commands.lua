@@ -1,17 +1,17 @@
 local vim = vim
 
 vim.api.nvim_create_user_command(
-  "ReloadPlugin",
+  'ReloadPlugin',
   function(opts)
-    require("plenary.reload").reload_module(opts.args)
+    require('plenary.reload').reload_module(opts.args)
   end,
   { nargs = 1 }
 )
 
 vim.api.nvim_create_user_command(
-  "ReloadColorscheme",
+  'ReloadColorscheme',
   function(opts)
-    require("plenary.reload").reload_module(opts.args)
+    require('plenary.reload').reload_module(opts.args)
     vim.cmd.colorscheme(opts.args)
   end,
   { nargs = 1 }

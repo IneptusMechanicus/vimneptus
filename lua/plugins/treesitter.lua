@@ -5,12 +5,12 @@ return {
       require('nvim-treesitter.configs').setup({
         highlight = { enable = true },
         ensure_installed = {
-          "lua",
-          "vim",
-          "regex",
-          "bash",
-          "markdown",
-          "markdown_inline"
+          'lua',
+          'vim',
+          'regex',
+          'bash',
+          'markdown',
+          'markdown_inline'
         }
       })
     end

@@ -24,10 +24,10 @@ return {
         cmdline_popup = {
           position = {
             row = '95%',
-            col = '100%',
+            col = '0%',
           },
           size = {
-            width = 60,
+            width = 100,
             height = 'auto',
           },
         },
@@ -35,10 +35,10 @@ return {
           relative = 'editor',
           position = {
             row = '85%',
-            col = '100%',
+            col = '0%',
           },
           size = {
-            width = 60,
+            width = 100,
             height = 10,
           },
           border = {

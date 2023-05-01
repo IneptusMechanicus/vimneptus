@@ -5,33 +5,46 @@ return {
     wk.register({
       a = 'Select All',
       y = 'Copy (clipboard)',
+      Y = 'Copy (clipboard)',
       p = 'Paste (clipboard)',
-      d = 'Cut (clipboard)',
       e = 'File Explorer',
       q = 'Close Buffer',
       w = 'Save File',
+      d = {
+        name = 'Debugger',
+        b = 'Breakpoint Toggle',
+        c = 'Continue',
+        i = 'Step In',
+        o = 'Step Out',
+        t = 'Toggle',
+        v = 'Step Over',
+        x = 'Terminate'
+      },
       t = {
         name = 'Telescope',
         b = 'Buffers',
         f = 'Find All Files',
         g = 'Git Files',
-        r = 'Live Grep',
-        h = 'Help'
+        h = 'Help',
+        r = 'Live Grep'
       },
       h = {
         name = 'Harpoon',
         m = 'Mark File',
         t = 'Toggle UI',
-      }
-    }, { prefix = '<leader>' })
-
-    wk.register({
-      g = {
-        d = 'Go To Definntion',
-        D = 'Go To Declaration',
+      },
+      l = {
+        name = 'LSP Actions',
+        c = 'Go To Declaration',
+        f = 'Go To Definntion',
         r = 'List References',
         l = 'Show Diagnostic Popup Under Cursor',
-      },
-    })
+        i = 'Show Implementation',
+        h = 'LSP Hover',
+        s = 'Signature',
+        ['['] = 'Diagnostic prev',
+        [']'] = 'Diagnostic next'
+      }
+    }, { prefix = '<leader>' })
   end
 }

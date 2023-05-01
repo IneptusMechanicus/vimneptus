@@ -2,7 +2,8 @@ return {
   'nvim-telescope/telescope.nvim',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'nvim-telescope/telescope-file-browser.nvim'
+    'nvim-telescope/telescope-file-browser.nvim',
+    'nvim-telescope/telescope-dap.nvim'
   },
   config = function()
     local vim = vim
@@ -15,7 +16,7 @@ return {
         },
         sorting_strategy = 'ascending',
         file_ignore_patterns = {
-          "node_modules"
+          'node_modules'
         }
       },
       extensions = {
@@ -25,7 +26,7 @@ return {
       }
     })
 
-    telescope.load_extension "file_browser"
+    telescope.load_extension 'file_browser'
 
     vim.keymap.set('n', '<leader>tf', function ()
       builtin.find_files({no_ignore = true}) 

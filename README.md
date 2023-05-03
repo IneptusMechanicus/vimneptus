@@ -27,8 +27,10 @@ My personal neovim config, complete with colorscheme. I mostly maintain it for m
 I use the neovim DAP client for PHP web dev, Neovim plugin dev and a little bit of Rust. At least those are the debuggers I have currently set up.
 The for rust and php you are going to need the following system packages:
 
-*[lldb]() - The LLVM debugger tool. This is used for debugging Rust Code, since it's built using LLVM tools.
-*[xdebug]() - PHP Xdebug, your standard PHP debugger
+* [lldb](https://lldb.llvm.org/) - The LLVM debugger tool. This is used for debugging Rust Code, since it's built using LLVM tools.
+* [xdebug](https://xdebug.org/) - PHP Xdebug, your standard PHP debugger
+
+For further info on the setup, look at the [Debugger Adapter Installation Guide](https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation) for `nvim-dap`
 
 ---
 
@@ -62,6 +64,6 @@ Once the download is complete, simply run Neovim. The config is written so that 
   * [LSP Zero](https://github.com/VonHeikemen/lsp-zero.nvim) - Easy LSP setup
   * [Nvim DAP](https://github.com/mfussenegger/nvim-dap) - DAP Client for debugging
     * [Nvim DAP UI](https://github.com/rcarriga/nvim-dap-ui) - UI tools for DAP inside Neovim
-    * [One small step for Vim kind]() - Debug adapter for Lua inside Neovim
+    * [One small step for Vim kind](https://github.com/jbyuki/one-small-step-for-vimkind) - Debug adapter for Lua inside Neovim
   * [Nvim Comment](https://github.com/terrortylor/nvim-comment) - Hotkey commenting
   * [Autopairs](https://github.com/windwp/nvim-autopairs) - Automatic parentheses

@@ -24,7 +24,7 @@ return {
       dap.adapters.php = {
         type = 'executable',
         command = 'node',
-        args = { '/home/ineptus/apps/nvim-xdebug/out/phpDebug.js' },
+        args = { os.getenv('HOME') .. '/apps/nvim-xdebug/out/phpDebug.js' },
       }
 
       dap.adapters.godot = {

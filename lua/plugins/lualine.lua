@@ -37,7 +37,6 @@ return {
         },
         component_separators = '|',
         section_separators = ' ',
-        disabled_filetypes = {'packer'}
       },
       sections = {
         lualine_a = {'mode'},

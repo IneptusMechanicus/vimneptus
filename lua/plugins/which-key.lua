@@ -35,6 +35,7 @@ return {
       },
       l = {
         name = 'LSP Actions',
+        a = 'Code Action',
         c = 'Go To Declaration',
         f = 'Go To Definntion',
         r = 'List References',

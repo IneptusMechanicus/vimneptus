@@ -1,4 +1,4 @@
-# <p align="center">Mechanicus NVim</p>
+# <p align="center">VimNeptus</p>
 
 <p align="center">
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/IneptusMechanicus/neovim-config?style=for-the-badge">
@@ -8,8 +8,10 @@ My personal neovim config, complete with colorscheme. I mostly maintain it for m
 
 ---
 
-![img1](img/1.png)
-![img2](img/2.png)
+<img src="img/img-1.png" style="width: 50%; height: auto;">
+<img src="img/img-2.png" style="width: 50%; height: auto;">
+<img src="img/img-3.png" style="width: 50%; height: auto;">
+<img src="img/img-4.png" style="width: 50%; height: auto;">
 
 ---
 
@@ -23,14 +25,8 @@ My personal neovim config, complete with colorscheme. I mostly maintain it for m
 * [ripgrep](https://github.com/BurntSushi/ripgrep) - Telescope uses ripgrep as a dependency for Live Grep Searching through files. For Linux, it should be present in the default package repos.
 
 ## Debuggers
-
-I use the neovim DAP client for PHP web dev, Neovim plugin dev and a little bit of Rust. At least those are the debuggers I have currently set up.
-The for rust and php you are going to need the following system packages:
-
-* [lldb](https://lldb.llvm.org/) - The LLVM debugger tool. This is used for debugging Rust Code, since it's built using LLVM tools.
-* [xdebug](https://xdebug.org/) - PHP Xdebug, your standard PHP debugger
-
-For further info on the setup, look at the [Debugger Adapter Installation Guide](https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation) for `nvim-dap`
+This config have an nvim-dap setups for PHP, Rust, GDScript and Nvim Lua.
+For further info on the setup and required packages, look at the [Debugger Adapter Installation Guide](https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation) for `nvim-dap`
 
 ---
 
@@ -38,14 +34,27 @@ For further info on the setup, look at the [Debugger Adapter Installation Guide]
 
 Simply clone the repo into your nvim configuration folder.
 
+### Linux:
+
 ```bash
 git clone https://github.com/IneptusMechanicus/neovim-config.git .config/nvim
 ```
+### Windows
+
+No clue. Who uses Neovim on Windows anyway?
+
+### MacOS
+
+I've only ever touched an apple device once.
+
+---
+
 Once the download is complete, simply run Neovim. The config is written so that it will install all necesarry plugins on first startup. The `alpha` dashboard won't appear until the next time you start neovim.
 
 ---
 
 # Plugins used
+
 * Package Manager
   * [Lazy.nvim](https://github.com/folke/lazy.nvim)
 * Basic UI and Layout

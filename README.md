@@ -16,6 +16,7 @@ My personal neovim config, complete with colorscheme. I mostly maintain it for m
     <img src="img/img-3.png" style="width: 48%; height: auto;">
     <img src="img/img-4.png" style="width: 48%; height: auto;">
 </p>
+
 ---
 
 # Requirements

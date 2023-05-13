@@ -8,11 +8,12 @@ My personal neovim config, complete with colorscheme. I mostly maintain it for m
 
 ---
 
-<img src="img/img-1.png" style="width: 50%; height: auto;">
-<img src="img/img-2.png" style="width: 50%; height: auto;">
-<img src="img/img-3.png" style="width: 50%; height: auto;">
-<img src="img/img-4.png" style="width: 50%; height: auto;">
-
+<div style="display: flex;">
+    <img src="img/img-1.png" style="width: 50%; height: auto;">
+    <img src="img/img-2.png" style="width: 50%; height: auto;">
+    <img src="img/img-3.png" style="width: 50%; height: auto;">
+    <img src="img/img-4.png" style="width: 50%; height: auto;">
+</div>
 ---
 
 # Requirements

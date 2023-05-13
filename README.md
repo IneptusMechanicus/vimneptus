@@ -1,19 +1,19 @@
 # <p align="center">VimNeptus</p>
 
 <p align="center">
-<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/IneptusMechanicus/neovim-config?style=for-the-badge">
-<img alt="GitHub" src="https://img.shields.io/github/license/IneptusMechanicus/neovim-config?style=for-the-badge">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/IneptusMechanicus/neovim-config?style=for-the-badge">
+    <img alt="GitHub" src="https://img.shields.io/github/license/IneptusMechanicus/neovim-config?style=for-the-badge">
 </p>
 My personal neovim config, complete with colorscheme. I mostly maintain it for myself. The config will be updated to accomodate any breaking changes made to the used plugins. Use at your own risk. Send a PR if you have any ideas. 
 
 ---
 
-<div style="display: flex;">
+<p align="left">
     <img src="img/img-1.png" style="width: 50%; height: auto;">
     <img src="img/img-2.png" style="width: 50%; height: auto;">
     <img src="img/img-3.png" style="width: 50%; height: auto;">
     <img src="img/img-4.png" style="width: 50%; height: auto;">
-</div>
+</p>
 ---
 
 # Requirements

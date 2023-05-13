@@ -1,4 +1,4 @@
-# <p align="center">VimNeptus</p>
+# <p align="center">VIMNEPTUS</p>
 
 <p align="center">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/IneptusMechanicus/neovim-config?style=for-the-badge">

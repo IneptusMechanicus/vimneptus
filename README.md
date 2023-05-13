@@ -63,8 +63,8 @@ Once the download is complete, simply run Neovim. The config is written so that 
 * Basic UI and Layout
   * [Alpha](https://github.com/goolord/alpha-nvim) - Welcome Screen
   * [Lualine](https://github.com/nvim-lualine/lualine.nvim) - Status line
-  * [WhichKey](https://github.com/folke/which-key.nvm) - Status line
-  * [Color Scheme](https://github.com/IneptusMechanicus/mechanicus.nvim) - Status line
+  * [WhichKey](https://github.com/folke/which-key.nvm) - Key binding helper
+  * [Mechanicus.nvim](https://github.com/IneptusMechanicus/mechanicus.nvim) - Color scheme
   * [Colorizer](https://github.com/NvChad/nvim-colorizer.lua) - Colorize hex values
 * File Management
   * [Telescope](https://github.com/nvim-telescope/telescope.nvim) - Fuzzy Finder

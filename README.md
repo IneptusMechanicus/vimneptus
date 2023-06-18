@@ -1,10 +1,10 @@
-# <p align="center">VimNeptus</p>
+# <p align="center">VIMNEPTUS</p>
 
 <p align="center">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/IneptusMechanicus/neovim-config?style=for-the-badge">
     <img alt="GitHub" src="https://img.shields.io/github/license/IneptusMechanicus/neovim-config?style=for-the-badge">
 </p>
-My personal neovim config, complete with colorscheme. I mostly maintain it for myself. The config will be updated to accomodate any breaking changes made to the used plugins. Use at your own risk. Send a PR if you have any ideas. 
+My personal neovim config, complete with colorscheme. It's somewhere in the middle of being just a personal config and a "distro". I believe the preinstalled packages are sufficient, though stuff like LSPs and Debuggers only span my personal scope. Keybindings are also not the most universal, they mostly follow my own logic.
 
 ---
 

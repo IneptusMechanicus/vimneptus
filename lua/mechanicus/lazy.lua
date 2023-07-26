@@ -1,1 +1,1 @@
-require('lazy').setup('plugins')
+require('lazy').setup('mechanicus.plugins')

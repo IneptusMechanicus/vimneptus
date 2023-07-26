@@ -1,4 +1,3 @@
-local vim = vim
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 
 if not vim.loop.fs_stat(lazypath) then
@@ -18,4 +17,4 @@ require('mechanicus.options')
 require('mechanicus.keybindings')
 require('mechanicus.commands')
 require('mechanicus.autocmd')
-require('lazy').setup('plugins')
+require('mechanicus.lazy')

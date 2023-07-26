@@ -15,7 +15,7 @@ return {
       },
       presets = {
         bottom_search = true,
-        command_palette = true,
+        command_palette = false,
         long_message_to_split = true,
         inc_rename = false,
         lsp_doc_border = false,
@@ -43,10 +43,9 @@ return {
           },
           border = {
             style = 'rounded',
-            padding = { 0, 1 },
           },
           win_options = {
-            winhighlight = { Normal = 'Normal', FloatBorder = 'DiagnosticInfo' },
+            winhighlight = { Normal = 'Normal', FloatBorder = 'WinBar' },
           },
         },
       },

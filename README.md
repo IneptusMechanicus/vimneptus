@@ -78,10 +78,11 @@ Once the download is complete, simply run Neovim. The config is written so that 
     * [LSP Config](https://github.com/neovim/nvim-lspconfig)- Easy LSP setup
         * [Mason](https://github.com/williamboman/mason.nvim) - LSP/DAP/Linter/Formatter plugin manager
         * [Mason LSP Config](https://github.com/williamboman/mason-lspconfig.nvim) - Bridge LSP and Mason
-    * [Code Completion](https://github.com/hrsh7th/nvim-cmp)
+    * [NVim CMP](https://github.com/hrsh7th/nvim-cmp) - Code Completion
         * [NVim CMP LSP](https://github.com/hrsh7th/cmp-nvim-lsp) - Completions source for LSP
         * [Luasnip](https://github.com/L3MON4D3/LuaSnip) - Snippet Engine
-        * [CMP Luasnip] - Luasnip completion source for NVim CMP
+        * [CMP Luasnip](https://github.com/saadparwaiz1/cmp_luasnip) - Luasnip completion source for NVim CMP
+        * [Friendly Snippets](https://github.com/rafamadriz/friendly-snippets) - Extra snippets collection
     * [NVim DAP](https://github.com/mfussenegger/nvim-dap) - DAP Client for debugging
         * [NVim DAP UI](https://github.com/rcarriga/nvim-dap-ui) - UI tools for DAP inside Neovim
         * [One small step for Vim kind](https://github.com/jbyuki/one-small-step-for-vimkind) - Debug adapter for Lua inside Neovim

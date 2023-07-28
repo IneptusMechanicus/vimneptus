@@ -10,7 +10,13 @@ return {
 
     local vim = vim
     local lsp = require('lspconfig')
-    local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+    local lsp_defaults = lsp.util.default_config
+
+    lsp_defaults.capabilities = vim.tbl_deep_extend(
+      'force',
+      lsp_defaults.capabilities,
+      require('cmp_nvim_lsp').default_capabilities()
+    )
 
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -31,40 +37,18 @@ return {
       end
     })
 
-    lsp.lua_ls.setup({
-      capabilities = capabilities
-    })
+    -- Language Servers with defaults only
 
-    lsp.intelephense.setup({
-      capabilities = capabilities
-    })
-
-    lsp.tsserver.setup({
-      capabilities = capabilities
-    })
-
-    lsp.bashls.setup({
-      capabilities = capabilities
-    })
-
-    lsp.pyright.setup({
-      capabilities = capabilities
-    })
-
-    lsp.cssls.setup({
-      capabilities = capabilities
-    })
-
-    lsp.ltex.setup({
-      capabilities = capabilities
-    })
-
-    lsp.html.setup({
-      capabilities = capabilities
-    })
+    lsp.lua_ls.setup({})
+    lsp.bashls.setup({})
+    lsp.cssls.setup({})
+    lsp.html.setup({})
+    lsp.intelephense.setup({})
+    lsp.ltex.setup({})
+    lsp.pyright.setup({})
+    lsp.tsserver.setup({})
 
     lsp.rust_analyzer.setup({
-      capabilities = capabilities,
       settings = {
         ["rust-analyzer"] = {
           diagnostics = {
@@ -77,18 +61,19 @@ return {
     })
 
     vim.diagnostic.config({
-      virtual_text = true,
-      signs = true,
-      underline = true,
-      update_in_insert = true,
+     virtual_text = false,
       severity_sort = true,
+      float = {
+        border = 'rounded',
+        source = 'always',
+      },
     })
 
-    -- Diagnostics gutter icons per lspconfig wiki
     local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
     end
+    print("done")
   end
 }

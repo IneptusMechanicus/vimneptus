@@ -2,12 +2,41 @@ return {
   'hrsh7th/nvim-cmp',
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
     "rafamadriz/friendly-snippets"
   },
   config = function ()
+    local vim = vim
     local cmp = require('cmp')
+    require("luasnip.loaders.from_vscode").lazy_load()
+
+    local icons = {
+      Class = "",
+      Color = "",
+      Constant = "",
+      Constructor = "",
+      Enum = "",
+      EnumMember = "",
+      Field = "",
+      File = "",
+      Folder = "",
+      Function = "ƒ",
+      Interface = "ﰮ ",
+      Keyword = "",
+      Method = "",
+      Module = "",
+      Property = "",
+      Snippet = "﬌",
+      Struct = "",
+      Text = "",
+      Unit = "",
+      Value = "",
+      Variable = "",
+    }
+
     cmp.setup({
       mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -24,9 +53,23 @@ return {
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
-      }, {
         { name = 'buffer' },
+        { name = 'path' }
       }),
+      formatting = {
+        format = function(entry, vim_item)
+          -- Kind icons
+          vim_item.kind = string.format('%s', icons[vim_item.kind]) -- This concatonates the icons with the name of the item kind
+          -- Source
+          vim_item.menu = ({
+            buffer = "",
+            nvim_lsp = "",
+            luasnip = "",
+            nvim_lua = "",
+          })[entry.source.name]
+          return vim_item
+        end
+      }
     })
   end
 }

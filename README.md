@@ -55,11 +55,9 @@ I've only ever touched an Apple device once. I think the setup is more or less s
 
 Once the download is complete, simply run Neovim. The config is written so that it will install all necessary plugins on first startup. The `alpha` dashboard won't appear until the next time you start neovim.
 
----
-
 ## Plugins used
 
-* Package Manager
+* Plugin Manager
     * [Lazy.nvim](https://github.com/folke/lazy.nvim)
 * Basic UI and Layout
     * [Alpha](https://github.com/goolord/alpha-nvim) - Welcome Screen
@@ -88,5 +86,6 @@ Once the download is complete, simply run Neovim. The config is written so that 
         * [One small step for Vim kind](https://github.com/jbyuki/one-small-step-for-vimkind) - Debug adapter for Lua inside Neovim
     * [NVim Comment](https://github.com/terrortylor/nvim-comment) - Hotkey commenting
     * [Autopairs](https://github.com/windwp/nvim-autopairs) - Automatic parentheses
+    * [DiffView](https://github.com/sindrets/diffview.nvim) - Managing diffs and merge conflicts
 
 This config has been written with the help and inspiration from the Neovim guides by [The Primeagen](https://github.com/ThePrimeagen) and [Chris Power typecraft](https://github.com/cpow)

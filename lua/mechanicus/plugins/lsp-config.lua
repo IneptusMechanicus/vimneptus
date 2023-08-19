@@ -6,17 +6,11 @@ return {
   },
   config = function()
     require('mason').setup()
-    require('mason-lspconfig').setup()
 
     local vim = vim
     local lsp = require('lspconfig')
-    local lsp_defaults = lsp.util.default_config
-
-    lsp_defaults.capabilities = vim.tbl_deep_extend(
-      'force',
-      lsp_defaults.capabilities,
-      require('cmp_nvim_lsp').default_capabilities()
-    )
+    local mason_lspconfig = require('mason-lspconfig')
+    local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -37,28 +31,26 @@ return {
       end
     })
 
-    -- Language Servers with defaults only
-
-    lsp.lua_ls.setup({})
-    lsp.bashls.setup({})
-    lsp.cssls.setup({})
-    lsp.html.setup({})
-    lsp.intelephense.setup({})
-    lsp.ltex.setup({})
-    lsp.pyright.setup({})
-    lsp.tsserver.setup({})
-
-    lsp.rust_analyzer.setup({
-      settings = {
-        ["rust-analyzer"] = {
-          diagnostics = {
-            enable = true,
-            disabled = {'unresolved-proc-macro'},
-            enableExperimental = true,
+    for key, item in pairs(mason_lspconfig.get_installed_servers()) do
+      if item == "rust_analyzer" then
+        lsp[item].setup({
+          capabilities = capabilities,
+          settings = {
+            ["rust-analyzer"] = {
+              diagnostics = {
+                enable = true,
+                disabled = {'unresolved-proc-macro'},
+                enableExperimental = true,
+              }
+            }
           }
-        }
-      }
-    })
+        })
+      else
+        lsp[item].setup({capabilities = capabilities})
+      end
+    end
+
+    mason_lspconfig.setup();
 
     vim.diagnostic.config({
      virtual_text = false,

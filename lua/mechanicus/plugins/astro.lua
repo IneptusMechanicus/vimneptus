@@ -1,3 +1,4 @@
 return {
-  'elel-dev/vim-astro-syntax'
+  'elel-dev/vim-astro-syntax',
+  'wuelnerdotexe/vim-astro'
 }

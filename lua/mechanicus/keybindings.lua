@@ -20,9 +20,15 @@ bindings.set('n', '<C-u>', '<C-u>zz')
 -- File Manager --
 bindings.set('n', '<leader>e', '<cmd>Telescope file_browser<cr>')
 
--- Tabline cycling --
+-- Buffer cycling --
 bindings.set('n', '<S-Right>', '<cmd>bnext<cr>')
 bindings.set('n', '<S-Left>', '<cmd>bprev<cr>')
+
+-- Split resizing
+bindings.set('n', '<C-Right>', '<C-w>>')
+bindings.set('n', '<C-Left>', '<C-w><')
+bindings.set('n', '<C-Up>', '<C-w>+')
+bindings.set('n', '<C-Down>', '<C-w>-')
 
 -- Moving lines --
 bindings.set('v', '<S-Up>', ':m \'<-2<CR>gv=gv')

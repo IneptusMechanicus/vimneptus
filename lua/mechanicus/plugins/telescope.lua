@@ -29,7 +29,7 @@ return {
     telescope.load_extension 'file_browser'
 
     vim.keymap.set('n', '<leader>tf', function ()
-      builtin.find_files({no_ignore = true}) 
+      builtin.find_files({no_ignore = true})
     end, {})
     vim.keymap.set('n', '<leader>tg', builtin.git_files, {})
     vim.keymap.set('n', '<leader>tr', builtin.live_grep, {})

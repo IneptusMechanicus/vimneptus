@@ -1,6 +1,8 @@
 return {
+  {'nvim-treesitter/nvim-treesitter-context'},
   {'nvim-treesitter/playground'},
-  {'nvim-treesitter/nvim-treesitter',
+  {
+    'nvim-treesitter/nvim-treesitter',
     config = function()
       require('nvim-treesitter.configs').setup({
         highlight = { enable = true },

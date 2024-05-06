@@ -1,6 +1,9 @@
 local vim = vim
 return {
-  {'jbyuki/one-small-step-for-vimkind'},
+  {
+    'jbyuki/one-small-step-for-vimkind',
+    'nvim-neotest/nvim-nio'
+  },
   {
     'rcarriga/nvim-dap-ui',
     config = function()

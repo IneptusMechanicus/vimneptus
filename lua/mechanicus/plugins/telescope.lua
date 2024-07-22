@@ -26,14 +26,16 @@ return {
       }
     })
 
-    telescope.load_extension 'file_browser'
+    telescope.load_extension('file_browser')
+    builtin.file_browser = function ()
+      telescope.extensions.file_browser.file_browser()
+    end
 
-    vim.keymap.set('n', '<leader>tf', function ()
-      builtin.find_files({no_ignore = true})
-    end, {})
-    vim.keymap.set('n', '<leader>tg', builtin.git_files, {})
-    vim.keymap.set('n', '<leader>tr', builtin.live_grep, {})
-    vim.keymap.set('n', '<leader>tb', builtin.buffers, {})
-    vim.keymap.set('n', '<leader>th', builtin.help_tags, {})
+    vim.keymap.set('n', '<leader>e',  builtin.file_browser, {desc = 'Browser'})
+    vim.keymap.set('n', '<leader>tg', builtin.git_files, {desc = 'Git Repo'})
+    vim.keymap.set('n', '<leader>tr', builtin.live_grep, {desc = 'Grep'})
+    vim.keymap.set('n', '<leader>tb', builtin.buffers, {desc = 'Open Buffers'})
+    vim.keymap.set('n', '<leader>th', builtin.help_tags, {desc = 'Help Tags'})
+    vim.keymap.set('n', '<leader>tf', builtin.find_files, {desc = 'Files'})
   end
 }

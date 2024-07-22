@@ -6,7 +6,7 @@ vim.opt.number = true
 vim.opt.mouse = 'a'
 vim.opt.wrap = false
 vim.opt.clipboard = 'unnamedplus'
-vim.opt.showmode = false
+vim.opt.showmode = true
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
 vim.opt.colorcolumn = "80"
@@ -26,7 +26,7 @@ vim.opt.smartindent = true
 -- 4. Special characters
 vim.opt.fillchars='eob: '
 vim.opt.list = true
-vim.opt.listchars='tab:| ,trail:·,eol:¬,space:·'
+vim.opt.listchars='tab:| ,trail:·,eol:¬'
 
 -- 5. Scrolling --
 vim.opt.scrolloff = 8

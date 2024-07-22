@@ -18,7 +18,6 @@ bindings.set('n', '<C-d>', '<C-d>zz')
 bindings.set('n', '<C-u>', '<C-u>zz')
 
 -- File Manager --
-bindings.set('n', '<leader>e', '<cmd>Telescope file_browser<cr>')
 
 -- Buffer cycling --
 bindings.set('n', '<S-Right>', '<cmd>bnext<cr>')

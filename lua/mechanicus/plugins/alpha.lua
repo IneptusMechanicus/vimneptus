@@ -21,7 +21,7 @@ return {'goolord/alpha-nvim',
 
       require('alpha').setup({
         layout = {
-          { type = 'padding', val = 8 },
+          { type = 'padding', val = 6 },
           -- TITLE --
           { type = 'text',
             val = {

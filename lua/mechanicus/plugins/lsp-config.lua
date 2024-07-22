@@ -16,18 +16,17 @@ return {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
       callback = function(args)
         local opts = { buffer = args.buf}
-        local client = vim.lsp.get_client_by_id(args.data.client_id)
-        vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, opts)
-        vim.keymap.set('n', '<leader>lc', vim.lsp.buf.declaration, opts)
-        vim.keymap.set('n', '<leader>lf', vim.lsp.buf.definition, opts)
-        vim.keymap.set('n', '<leader>li', vim.lsp.buf.implementation, opts)
-        vim.keymap.set('n', '<leader>ll', vim.diagnostic.open_float, opts)
-        vim.keymap.set('n', '<leader>lr', vim.lsp.buf.references, opts)
-        vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover, opts)
-        vim.keymap.set('n', '<leader>ls', vim.lsp.buf.signature_help, opts)
-        vim.keymap.set('n', '<leader>l[', vim.diagnostic.goto_prev, opts)
-        vim.keymap.set('n', '<ledrer>l]', vim.diagnostic.goto_next, opts)
-        client.server_capabilities.semanticTokensProvider = nil
+        vim.lsp.get_client_by_id(args.data.client_id).server_capabilities.semanticTokensProvider = nil
+        vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, {desc = 'Code Action', buffer = args.buf})
+        vim.keymap.set('n', '<leader>lc', vim.lsp.buf.declaration, {desc = 'Go To Declaration', buffer = args.buf})
+        vim.keymap.set('n', '<leader>lf', vim.lsp.buf.definition, {desc = 'Go To Definition', buffer = args.buf})
+        vim.keymap.set('n', '<leader>li', vim.lsp.buf.implementation, {desc = 'Go To Implementation', buffer = args.buf})
+        vim.keymap.set('n', '<leader>ll', vim.diagnostic.open_float, {desc = 'Show Diagnostic Message', buffer = args.buf})
+        vim.keymap.set('n', '<leader>lr', vim.lsp.buf.references, {desc = 'List References', buffer = args.buf})
+        vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover, {desc = 'Hover', buffer = args.buf})
+        vim.keymap.set('n', '<leader>ls', vim.lsp.buf.signature_help, {desc = 'Signature Help', buffer = args.buf})
+        vim.keymap.set('n', '<leader>l[', vim.diagnostic.goto_prev, {desc = 'Previous Diagnostic', buffer = args.buf})
+        vim.keymap.set('n', '<ledrer>l]', vim.diagnostic.goto_next, {desc = 'Next Diagnostic', buffer = args.buf})
       end
     })
 

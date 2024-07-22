@@ -85,12 +85,12 @@ return {
 
       -- Keybindings
 
-      vim.keymap.set('n', '<leader>db', '<cmd>DapToggleBreakpoint<cr>')
-      vim.keymap.set('n', '<leader>dc', '<cmd>DapContinue<cr>')
-      vim.keymap.set('n', '<leader>di', '<cmd>DapStepIn<cr>')
-      vim.keymap.set('n', '<leader>do', '<cmd>DapStepOut<cr>')
-      vim.keymap.set('n', '<leader>dv', '<cmd>DapStepOver<cr>')
-      vim.keymap.set('n', '<leader>dx', '<cmd>DapTerminate<cr>')
+      vim.keymap.set('n', '<leader>db', '<cmd>DapToggleBreakpoint<cr>', {desc = 'Toggle Breakpoint'})
+      vim.keymap.set('n', '<leader>dc', '<cmd>DapContinue<cr>', {desc = 'Continue'})
+      vim.keymap.set('n', '<leader>di', '<cmd>DapStepIn<cr>', {desc = 'Step In'})
+      vim.keymap.set('n', '<leader>do', '<cmd>DapStepOut<cr>', {desc = 'Step Out'})
+      vim.keymap.set('n', '<leader>dv', '<cmd>DapStepOver<cr>', {desc = 'Step Over'})
+      vim.keymap.set('n', '<leader>dx', '<cmd>DapTerminate<cr>', {desc = 'Terminate'})
     end
   },
 }
